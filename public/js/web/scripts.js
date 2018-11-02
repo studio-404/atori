@@ -150,8 +150,8 @@ $(document).ready(function() {
 		$('.tooltip_3').remove();
 	})
 	.mousemove(function(e){
-		var mousex = e.pageX - 229; 
-		var mousey = e.pageY - 75; 
+		var mousex = e.pageX - 240; 
+		var mousey = e.pageY - 80; 
 		$('.tooltip_3')
 		.css({ top: mousey, left: mousex })
 	});

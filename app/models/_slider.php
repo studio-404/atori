@@ -54,7 +54,7 @@ class _slider
 					"<a href=\"%s\" class=\"LearnMore animated\" data-animation-in=\"fadeInUp\" data-delay-in=\"1\">\n",
 					strip_tags($value['url'])
 				);
-				$out["list"] .= sprintf("<span>%s</span>\n", $l->translate("more"));
+				$out["list"] .= sprintf("<div></div><span>%s</span>\n", $l->translate("more"));
 				$out["list"] .= "</a>\n";
 				$out["list"] .= "</div>\n";
 				$out["list"] .= "</div>\n";

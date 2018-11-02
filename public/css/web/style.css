@@ -464,7 +464,7 @@ body {
 }
 */
 
-
+/*
 .LearnMore {
 	border:solid #fff 1px;
 	text-align:center;
@@ -515,6 +515,120 @@ body {
 	right: 0;
 	opacity: 1;
 }
+*/
+
+.LearnMore {	 
+    text-align: center;
+    padding-left: 13px;
+    padding-right: 13px;
+    display: inline-block;
+    font-family: GothamBold;
+    font-size: 17px;
+    color: #fff !important;
+    position: relative;
+    margin-top: 15px;
+    text-decoration: none;
+    z-index: 99999;
+	height:40px;
+	line-height:40px;
+	position:relative;
+	left:20px;
+	text-decoration:none !important;
+}
+.LearnMore:hover {
+	left:0
+}
+.LearnMore span{
+  display: block; 
+  color:#fff;
+}
+.LearnMore::before, 
+.LearnMore::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+.LearnMore span::before, 
+.LearnMore span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+.LearnMore:hover::before, 
+.LearnMore:hover::after{
+  width: 100%;
+}
+.LearnMore:hover span::before, 
+.LearnMore:hover span::after{
+  height: 100%;
+  
+}
+
+.LearnMore::after{
+  left: 0;
+  bottom: 0;
+  transition-delay: 0.6s;
+}
+.LearnMore span::after{
+  transition-delay: 0.4s;
+  right: 0;
+  bottom: 0;
+}
+.LearnMore::before{
+  right: 0;
+  top: 0;
+  transition-delay: 0.2s;
+}
+.LearnMore span::before{
+  transition-delay: 0s;
+  left: 0;
+  top: 0;
+}
+.LearnMore:hover::after{
+  transition-delay: 0s;
+}
+.LearnMore:hover span::after{
+  transition-delay: 0.2s;
+}
+.LearnMore:hover::before{
+  transition-delay: 0.4s;
+}
+.LearnMore:hover span::before{
+  transition-delay: 0.6s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 .SlideArrow {
@@ -948,20 +1062,21 @@ body {
 
 
 .Button1 { 
-	height:40px;
-	line-height:35px;
+	height:41px;
+	line-height:40px;
 	text-align:center;
 	padding-left:13px;
 	padding-right:13px;
 	display:inline-block;
-	font-family:GothamMedium;
+	font-family:HelveticaCyrBold;
 	font-size:17px;
 	color:#000;
 	display:block;
 	position:relative;
 	border-radius:5px;
 	border:solid #000 1px;
-	text-transform:uppercase
+	text-transform:uppercase;
+	overflow:hidden;
 }
 .Button1:hover {
 	text-decoration:none;
@@ -1031,6 +1146,7 @@ a.Button2:hover {
 	position:relative;
 	resize:none;
 	max-height:150px;
+	font-family:NotoSansRegular;
 }
 .AtoriInput input[type="text"]:focus,
 .AtoriInput input[type="email"]:focus,
@@ -1379,11 +1495,11 @@ a.Button2:hover {
 .MapAreaDiv {
 	position:absolute;
 	bottom:0; 
-	height:100%; 
+	height:90%; 
 	left:14%
 }
 .MapAreaDiv img {
-	height:100%
+	height:100%;
 }
 
 
@@ -1698,12 +1814,13 @@ a.Button2:hover {
 .ApartInfoBox .NumbersDiv .ApartNumber {
 	width:calc(100% - 115px);
 	height:52px;
+	line-height:52px;
 	align-items:center;
 	display:inline-flex;
 	float:left;	
 	background: linear-gradient(45deg, #6187bc, #3bacfc);
 	padding-left:20px; 
-	font-family:GothamBook;
+	font-family:NotoSansRegular;
 	font-size:18px;
 	color:#fff
 }
@@ -1714,9 +1831,10 @@ a.Button2:hover {
 	text-align:center;
 	width:100px;
     height: 52px;
+	line-height:52px;
 	align-items:center;
 	display:grid;
-	font-family:GothamBook;
+	font-family:NotoSansRegular;
 	font-size:19px;
 	color:#fff;
 }
@@ -2098,6 +2216,9 @@ a.Button2:hover {
 	color:#0096ff;
 	font-family:GothamBook;
 	font-size:18px;
+	
+	animation: ToolTip1 linear .3s;
+    animation-iteration-count: 1;
 } 
 .tooltip span {
 	font-family:GothamBold;
@@ -2158,9 +2279,10 @@ a.Button2:hover {
  
  
 .tooltip_3 {
-	display:none;
+	visibility:visible;
 	position:absolute;  
- 
+	animation: ToolTip1 linear .3s;
+    animation-iteration-count: 1;
 } 
 .FloorToolTip {
 	width:150px
@@ -2186,7 +2308,7 @@ a.Button2:hover {
     color: #fff;
     font-size: 14px;
     font-weight: normal;
-    font-family: GothamLight;
+    font-family: NotoSansRegular;
     line-height: 24px;
     padding-left: 6px;
     padding-right: 6px;
@@ -2200,18 +2322,32 @@ a.Button2:hover {
     top: 48px;
     width: 205px;
     height: 1px;
-    border: dotted #eaf8fe 1px;	
+    border: dashed #eaf8fe 1px;		 
 }
 .FloorToolTip:before {
 	content:'';
 	position:absolute;
 	left: 200px;
     top: 60.5px;
-	border: dotted #eaf8fe 1px;	
+	border: dashed #eaf8fe 1px;	
 	width:35px;
 	height:1px;	
 	transform:rotate(45deg)
 } 
+ 
+ 
+@keyframes ToolTip1{
+  0% {
+    opacity:0;
+    /*transform:  translate(-20px,0px);*/
+  }
+  100% {
+    opacity:1;
+   /* transform:  translate(0px,0px);*/
+  }
+} 
+
+ 
  
  
  
@@ -2237,17 +2373,12 @@ area:after {
 .appartment-soldlist div {
 	color:#330c4f;
 	text-transform:uppercase;
-	font-size:20px;
+	font-size:17px;
 	font-family:GothamMedium;
 	display:none;
 }
 .appartment-soldlist div.active {
 	display:block;
-}
- 
- 
-.appartment-soldlist {
-	 
 }
 
 
