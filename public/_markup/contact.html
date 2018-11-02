@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>  
+<title>Contact</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/slick.min.js"></script> 
+<script src="assets/js/slick-animation.min.js"></script>
+<script src="assets/js/jquery.maphilight.js"></script>  
+<script src="assets/js/imageMapResizer.min.js"></script>   
+<script src="assets/animsition/js/animsition.js"></script>  
+<script src="assets/js/jquery.nicescroll.js"></script>      
+<script src="assets/js/scripts.js"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4_axk5RwRUCAiKPceFtqVlxXdNiqMi_Q&language=ka" type="text/javascript"></script>
+
+
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">  
+<link rel="stylesheet" type="text/css" href="assets/css/fonts.css"> 
+<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/custom_res.css">
+<link rel="stylesheet" type="text/css" href="assets/animsition/css/animsition.css">		
+<link rel="stylesheet" type="text/css" href="assets/animsition/css/base.css">		
+<link rel="stylesheet" type="text/css" href="assets/animsition/css/loading.css">		
+</head>
+<body class=""> 
+ 
+ 
+ 
+<div class="MainDiv animsition">  
+	<header class="Header">
+		<div class="col-sm-6">
+			<a href="index.html" class="logo animsition-link">atori</a>
+		</div>
+		<div class="col-sm-6 padding_0">
+			<div class="Hamburger"></div>
+			<div class="Language pull-right">
+				<span>en</span>
+				<div class="LangList">
+					<a href="#">ka</a>
+				</div>
+			</div>
+			<div class="HeaderMenu pull-right">  
+				<li><a href="projects.html" class="animsition-link">Projects</a></li>
+				<li><a href="about.html" class="animsition-link">about</a></li>
+				<li class="active"><a href="contact.html" class="animsition-link">contact us</a></li>				
+			</div>
+		</div>
+	</header> 
+	
+	<section class="MainSection" id="MainSection">
+		<div class="SectionHeight">
+			<div class="container-fluid AtoriContainer"> 
+				<div class="ContactPage">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="ContactForm">
+								<div class="Title">Quick Contact</div>
+								<div class="Form">
+									<div class="AtoriInput"> 
+										<input type="text" name="Full" id="input1" autocomplete="name"/>
+										<label for="input1">Full Name</label>
+									</div>
+									<div class="AtoriInput">
+										<input type="text" name="Full" id="input2" autocomplete="name"/>
+										<label for="input2">Email Address</label>
+									</div>
+									<div class="AtoriInput">
+										<input type="text" name="Full" id="input3" autocomplete="name"/>
+										<label for="input3">Phone Number</label>
+									</div>
+									<div class="AtoriInput">
+										<textarea name="Enquiry" id="input4" ></textarea> 
+										<label for="input4">Enquiry</label>
+									</div>
+									<a href="#" class="Button1 animated fadeInUp">
+										submit
+									</a>
+								</div>
+							</div>
+						</div>
+
+																
+						<div class="col-sm-6 ">					 
+							<div class="ContactMapDiv">
+								<div id="map-canvas" style="width:100%; height:100%;"></div>
+								<script>  
+									  var markerLatLng = new google.maps.LatLng(41.7232271, 44.7604646);
+
+									  var mapOptions = {
+										zoom: 19,
+										center: markerLatLng,
+										mapTypeId: google.maps.MapTypeId.ROADMAP,	
+										disableDefaultUI: true,
+										styles: [{"stylers": [{ "saturation": -100 }]}],
+									  };
+									  
+									  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+									  var markerIcon = {
+											url: 'assets/img/map_pin.png',
+											scaledSize: new google.maps.Size(38, 49),
+											origin: new google.maps.Point(0, 0),
+											anchor: new google.maps.Point(32,65),
+											labelOrigin:  new google.maps.Point(40,33),
+										  };
+									  
+									  //var markerLabel = 'Burdzgla street N343';
+									  var marker = new google.maps.Marker({
+										map: map,									
+										animation: google.maps.Animation.DROP,
+										position: markerLatLng,
+										icon: markerIcon,
+										labelClass: "labels", // the CSS class for the label
+										label: {
+										 // text: markerLabel,									  
+										  color: "#000",
+										  fontSize: "16px",
+										  fontWeight: "bold",
+										  Width: "200px"
+										}
+									  }); 
+
+								</script>
+								
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="ContactInfo">
+								<li class="Email">info@atori.ge</li>
+								<li class="Pin">Burdzgla, str.34</li>
+								<li class="Mob">577 72 90 60</li>							 
+							</div>
+							<div class="ContactButtons">
+								<div class="row">
+									<div class="col-sm-6">
+										<a href="#" class="Facebook">Follow us</a>
+									</div>
+									<div class="col-sm-6">
+										<a href="#" class="Messenger">Message us</a>
+									</div> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</section>
+
+ 
+ 
+<footer class="Footer">
+	<div class="container-fluid AtoriContainer">
+		<div class="CopyRight">
+			&copy; 2018 Atori Development & Enviroment
+		</div>
+	</div>
+</div> 
+
+	
+</div>
+ 
+ 
+ 
+ 
+ 
+<div class="animsition-loading"></div>
+</body>
+</html> 

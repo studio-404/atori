@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'GothamLight';
+  src: url('../../fonts/web/Gotham-Light.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/Gotham-Light.woff') format('woff'), 
+  url('../../fonts/web/Gotham-Light.ttf')  format('truetype'), 
+  url('../../fonts/web/Gotham-Light.svg#Gotham-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('../../fonts/web/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/Gotham-Medium.woff') format('woff'), 
+  url('../../fonts/web/Gotham-Medium.ttf')  format('truetype'), 
+  url('../../fonts/web/Gotham-Medium.svg#Gotham-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url('../../fonts/web/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/Gotham-Bold.otf')  format('opentype'),
+  url('../../fonts/web/Gotham-Bold.woff') format('woff'), 
+  url('../../fonts/web/Gotham-Bold.ttf')  format('truetype'), 
+  url('../../fonts/web/Gotham-Bold.svg#Gotham-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('../../fonts/web/Gotham-Book.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/Gotham-Book.woff') format('woff'), 
+  url('../../fonts/web/Gotham-Book.ttf')  format('truetype'), 
+  url('../../fonts/web/Gotham-Book.svg#Gotham-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansBold';
+  src: url('../../fonts/web/NotoSans-Bold.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/NotoSans-Bold.woff') format('woff'), 
+  url('../../fonts/web/NotoSans-Bold.ttf')  format('truetype'), 
+  url('../../fonts/web/NotoSans-Bold.svg#NotoSans-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSansRegular';
+  src: url('../../fonts/web/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/NotoSans-Regular.woff') format('woff'), 
+  url('../../fonts/web/NotoSans-Regular.ttf')  format('truetype'), 
+  url('../../fonts/web/NotoSans-Regular.svg#NotoSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'HelveticaCyrBold';
+  src: url('../../fonts/web/HelveticaCyr-Bold.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/web/HelveticaCyr-Bold.otf')  format('opentype'),
+	     url('../../fonts/web/HelveticaCyr-Bold.woff') format('woff'), 
+		 url('../../fonts/web/HelveticaCyr-Bold.ttf')  format('truetype'), 
+		 url('../../fonts/web/HelveticaCyr-Bold.svg#HelveticaCyr-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'HelveticaNeueLTGEOW8245LtRegular';
+  src: url('../../fonts/HelveticaNeueLTGEOW82-45Lt-Regular.eot?#iefix') format('embedded-opentype'),  
+  url('../../fonts/HelveticaNeueLTGEOW82-45Lt-Regular.woff') format('woff'), 
+  url('../../fonts/HelveticaNeueLTGEOW82-45Lt-Regular.ttf')  format('truetype'), 
+  url('../../fonts/HelveticaNeueLTGEOW82-45Lt-Regular.svg#HelveticaNeueLTGEOW82-45Lt-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'NotoSansGeorgian';
+  src: url('../../fonts/NotoSansGeorgian.eot?#iefix') format('embedded-opentype'), 
+  url('../../fonts/NotoSansGeorgian.otf')  format('opentype'),
+	     url('../../fonts/NotoSansGeorgian.woff') format('woff'),
+		 url('../../fonts/NotoSansGeorgian.ttf')  format('truetype'), 
+		 url('../../fonts/NotoSansGeorgian.svg#NotoSansGeorgian') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+

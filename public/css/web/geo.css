@@ -1,0 +1,136 @@
+
+
+
+
+.HeaderMenu li a {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-weight:bold;
+}
+
+
+.slide .SlideContentHeadings h2 {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-weight:bold;
+}
+.slide .SlideContentHeadings p {
+	font-family:NotoSansGeorgian;
+	font-size: 25px;
+}
+.LearnMore {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+
+.ApartInfoBox.ApartInfoBox222 .NumbersDiv .ApartNumber {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size:15px;
+}
+.ApartInfoBox .NumbersDiv .Sold {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size:15px;
+}
+.ApartInfoBox .Info .Size {
+	font-family:NotoSansGeorgian;
+}
+.ApartInfoBox .Info .Total .Name {
+	font-family:NotoSansGeorgian;
+	font-size:16px;
+}
+.ApartInfoBox .Info .Total .PerSqm {
+	font-family:NotoSansGeorgian;
+	font-size:16px;
+}
+.ApartInfoBox .DownloadFile button {
+	font-size: 18px;
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ProjectListDiv .TabButtons a {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ProjectListDiv .TabButtons li.active a {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.OnGoingDiv .Item .Title {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+
+.OnGoingDiv .Item .Text {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ComplatedDiv .Item .Title {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+
+
+
+.ApartamentInfo .InfoBox .Head {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ApartamentInfo .InfoBox .Content .Text {
+	font-family:NotoSansGeorgian;
+	font-size: 15px;
+    line-height: 23px;
+}
+.ApartamentInfo .InfoBox .Content .Features .Title {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ApartamentInfo .InfoBox .Content .Features .Item .Name {
+	font-family:NotoSansGeorgian;
+	font-size: 15px;
+}
+
+
+
+.ApartamentInfo .RightIcons li span {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size: 15px;
+}
+.TermsDivContent {
+	font-family:NotoSansGeorgian;
+}
+
+
+
+.AboutPage .AboutInfo .Title,
+.AboutPage .AboutInfo .Text h3 {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.AboutPage .AboutInfo .Text {
+	font-family:NotoSansGeorgian;
+	font-size: 15px;
+    line-height: 23px;
+}
+.AboutPage .AboutImage .CorporateBrochure {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+
+
+
+
+
+.ContactPage .ContactForm .Title {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.AtoriInput input[type="text"] ~ label, 
+.AtoriInput input[type="email"] ~ label, 
+.AtoriInput textarea ~ label {
+	font-family:NotoSansGeorgian;
+}
+.Button1 {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
+.ContactButtons a {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size: 15px;
+}
+
+
+
+
+
+
+.appartment-soldlist div {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size: 14px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,588 @@
+@media (max-width:992px) {
+	
+	.Language {
+		display:none
+	}
+	
+	
+	body {
+		overflow-y:scroll !important;
+
+	}
+	
+	 .ContectButton {
+		 display:none;
+	 }
+	 .HeaderMenu {
+		position: fixed;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		background: rgba(51,101,171,0.9);
+		display:block;
+		padding-top:50px;
+		top:-100%;
+		transition:0.5s
+	} 
+	.ShowMenu .HeaderMenu {
+		top:0;
+		transition:0.5s
+	}
+	.ShowMenuInside .HeaderMenu {
+		top:0;
+		transition:0.5s
+	}
+	.HeaderMenu ul {
+		padding:0
+	}
+	.HeaderMenu li {
+		list-style:none;
+		display:inline-block;
+		width:100%;
+	}
+	.HeaderMenu li a {
+		color:#fff;
+		font-family: GothamBold;
+		font-size:25px; 
+		width:100%;
+		text-align:center;
+		display:inline-block;
+	}
+	.HeaderMenu li a:after {
+		display:none;
+	}
+	.Header {
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:999999
+	}
+	.Header .logo {
+		margin-left:0;
+		font-size:17px;
+		background-size: 108px !important;
+		padding-top: 74px !important;
+	}
+	.HomePage .Header {
+		top:0;
+		z-index:99999999999999;
+	}
+	.HomePage .Header .logo {
+		top:35px;
+	}
+	
+	/*
+	.slide .SlideContent {
+		top:20%
+	}
+	.slide .SlideContent {
+		transform: translate(25px, -65%) !important;
+	}
+	.slide .SlideContentHeadings h2 {
+		font-size:28px;
+	}
+	.slide .SlideContentHeadings p {
+		font-size:20px;
+	}
+	
+	.SlideArrow:after {
+		content: '';
+		width: 90px; 
+		left: -4px;
+		top: -27px; 
+	}
+	*/
+	
+	.AtoriContainer {
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.ContactPage {
+		padding-right:0;
+	}
+	.ContactPage .ContactForm {
+		margin-bottom:13px;
+	}
+	.ContactButtons {
+		margin-top:15px;
+	}
+	.ContactButtons .col-sm-6 {
+		display:inline-block;
+		width:50%;
+		float:left;
+	}
+	
+	.ContactMapDiv {
+		height:300px;
+		margin-bottom:15px
+	}
+	
+	
+	.MainSection {
+		height:auto;
+		padding-top:85px;
+	}
+	
+	.AboutPage .AboutInfo {
+		width:100%;
+		padding:15px;
+		padding-top:0;		
+	}
+	.AboutPage .AboutInfo .row {
+		margin-left:-5px;
+		margin-right:-5px;
+	}
+	.AboutPage .AboutInfo .col-sm-4 {
+		width: 33.33333333%;
+		display: inline-block;
+		float: left;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+	.AboutPage .AboutInfo .AvardsInfo .Item {
+		height:auto;
+		padding-left:0
+	}
+	.AboutPage .AboutInfo .AvardsInfo .Item label {
+		width:100%;
+		text-align:center;
+		margin-bottom:0;
+		position: relative;
+		top: 10px;
+	}
+	.AboutPage .AboutInfo .AvardsInfo .Item span {
+		display: inline-block; 
+		padding-left: 5px;
+		padding-right: 5px;
+		width: 100%;
+		font-size: 14px;
+		text-align: center;
+	}
+	.AboutPage .AboutImage {
+		width:100%;
+		margin-top:15px;
+	}
+	.AboutPage .AboutImage .Image {
+		margin-left:0;
+	}
+	.AboutPage .AboutImage .CorporateBrochure {
+		top:15px;
+		left:15px;
+	}
+	
+	.MainSection {
+	 
+	}
+	
+	.OnGoingDiv {
+		margin-top:0px
+	}
+	.OnGoingDiv a {
+		display:inline-block;
+		margin-top:15px;
+	}
+	.OnGoingDiv .Item {
+		border:solid #fff 15px;
+	}
+	.OnGoingDiv .row {
+		height:auto;
+		  
+	}
+	.OnGoingDiv .Item .Title {
+		top: 15px;
+		font-size: 16px;
+	}
+	.OnGoingDiv .Item .Text {
+		width:80%;
+		font-size:13px;
+	}
+	.ProjectListDiv {
+		padding-right:0;
+	}
+	.ProjectListDiv .TabButtons {
+		display: inline-block;
+		width: 100%;
+	}
+	.ProjectListDiv .TabButtons li { 
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+	.ProjectListDiv .TabButtons a {
+		width: 100%;
+		display: inline-block;
+		text-align:center;
+		font-size:15px;
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	
+	
+	.ComplatedDiv {
+		margin-top:0;
+		height:auto;
+	}
+	.ComplatedDiv .row {
+		height:auto;
+		margin-left:0;
+		margin-right:0
+	}
+
+	
+	.ProjectInside {
+		height:auto;
+		/*overflow-y:scroll*/
+	}
+	.ApartamentInfo {
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.ApartamentInfo .container-fluid {
+		padding-left:0;
+	}
+	
+	
+	
+	.ApartamentDiv {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.ProjectInside {
+		margin-top: 70px;
+	}
+	.ApartamentInfo .InfoBox {
+		margin-top:8px;
+	}
+	.ApartamentInfo .row {
+		display:block;		 
+	}
+	.ApartamentInfo {
+		position:relative;
+	}
+	
+	
+	.ComplatedDivInfo {
+		display: inline-block;
+		margin-top: 15px;
+	}
+	.ComplatedDivInfo img {
+		height: auto;
+		width: 100%;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .row {
+		width:104%;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .col-sm-4 {
+		display:inline-block;
+		width:33.33333333333333%;
+		float:left;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .Item .Number {
+		font-size: 20px;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .Item .Name {
+		margin-top: 20px;
+		font-size:16px;
+	}
+	.ApartamentInfo .col-sm-8 {
+		position:inherit
+	}
+	
+	.ApartRightDiv {
+		padding: 35px 15px 30px 15px;
+	}
+	.ApartRightDiv .CloseApartDiv {
+		width:25px;
+		height:25px;
+		top: -6px;
+		right: 13px;
+	}
+	
+	
+	.AtoriLogoBottom {
+		height:100px;
+	}
+	
+	.slide .SlideContent {
+		transform: translate(30px, -15%);
+		z-index:999999;
+		width: 87%;
+ 	}
+	.slide .SlideContentHeadings h2 {
+		font-size:27px;
+		
+	}
+	.slide .SlideContentHeadings p {
+		font-size:23px;
+	}
+	.SlideArrow {
+		margin-top:-20px;
+		left:70px;
+	}
+	
+	
+	
+	
+	.ApartamentInfo .RightIcons {
+		position:relative;
+		left:0;
+		top:0;
+		display:inline-block;
+		width:100%;
+		background: rgba(0,186,255,0.8);
+		padding:15px;    
+		margin-bottom: 40px;
+	}
+
+	.ApartamentInfo .RightIcons .OpenGallery {
+		width:33.33333333333333%;
+		display:inline-block;
+		float:left;
+		border:solid #fff 1px;
+	}
+	.ApartamentInfo .RightIcons .OpenLocation {
+		width:33.33333333333333%;
+		display:inline-block;
+		float:left;
+		border:solid #fff 1px;
+	}
+	.ApartamentInfo .RightIcons .OpenTerms {
+		width:33.33333333333333%;
+		display:inline-block;
+		float:left;
+		border:solid #fff 1px;
+	}
+	
+	.ApartamentInfo .RightIcons li {
+		padding-top: 9px;
+		padding-bottom: 4px;
+	}
+	.ApartamentInfo .RightIcons li span {
+		font-size:14px;
+	}
+	.ApartamentInfo .RightIcons li .Icon.Gallery {
+		height:35px;
+		width: 39px;
+	}
+	.ApartamentInfo .RightIcons li .Icon.Location {
+		height:35px;
+		width:26px;
+	}
+	.ApartamentInfo .RightIcons li .Icon.Terms {
+		height:35px;
+		width: 26px;
+	}
+	
+	
+	.ApartamentInfo .InfoBox .Content .Features .Item .Number {
+		top:3px;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .Item.Stories .Icon {
+		width:27px;
+		height:22px;
+		background-size:27px 22px !important;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .Item.Recreation .Icon {
+		width:30px;
+		height:25px;
+		background-size:30px 25px !important;
+	}
+	.ApartamentInfo .InfoBox .Content .Features .Item.Parking .Icon {
+		width:30px;
+		height:25px;
+		background-size:30px 25px !important;
+	}
+	
+	
+	.ApartamentInfo .InfoBox .Content .Features .Item{
+		height:45px;
+	}
+
+	
+	.ComplatedDiv:after {
+		width:100%;
+		left:0;
+		bottom:0;
+		height: 20%;
+	}
+	
+	
+	.MapAreaDiv {
+		display:none;
+	}
+	.SmallImages .row {
+		width:100%;
+	}
+	.ApartGallery .BigImages {
+		height: calc(100% - 62px);
+	}
+	
+	.ContactMapDiv {height:100%;}
+	.MobileStyle {overflow:hidden !important;}
+	.MobileStyle .ProjectInside {height:100%}
+	.MobileStyle .ApartRightDiv {position:fixed; height:calc(100% - 69px); margin-top:-1px; top:70px; z-index:99999999999999999}
+	
+	
+	.MobileSelectFloor {
+		margin-top:15px;
+		display:inline-block;
+		width:100%;
+		overflow:hidden;
+		position:relative
+	}
+	.MobileSelectFloor select {
+		width:100%;
+		height:52px;
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:99;
+		opacity:0
+	}
+	.MobileSelectFloor .ApartInfoBox  {
+		width:100%; 
+		display:inline-block;
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv {
+		width: 100%;
+		display: inline-block;
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv .FloorNumber {
+		width:50px;
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv .ApartNumber {
+		font-size:14px;
+		width:calc(100% - 122px);
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv .Floor {
+		display: inline-block;
+		float: left;
+		width: 70px;
+		height: 52px;
+		line-height: 52px;
+		color: #000;
+		font-family: NotoSansBold;
+		background:#fcff00;
+		font-size: 35px;
+		padding-left: 8px;
+		position:relative;
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv .Floor:after {
+		content:'';
+		width:12px;
+		height:7px;
+		position:absolute;
+		right:6px;
+		top:10px;
+		background:url('../img/up_small.png') no-repeat;
+		background-size:100% 100%;
+	}
+	.MobileSelectFloor .ApartInfoBox .NumbersDiv .Floor:before {
+		content:'';
+		width:12px;
+		height:7px;
+		position:absolute;
+		right:6px;
+		bottom:10px;
+		background:url('../img/down_small.png') no-repeat;
+		background-size:100% 100%;
+	}
+	
+	 
+	 
+	.ApartInfoBox {
+		display:none;
+	} 
+	.ApartFirstModal .col-sm-6 {
+		height:auto
+	}
+	.ApartFirstModal {
+		padding: 20px 0px 30px 0px;
+	}
+	
+	.FloorFirstModal {
+		height:auto;
+		padding: 15px 0px 30px 0px;
+	}
+	.FloorFirstModal .col-sm-6 {
+		padding:0
+	}
+	.FloorFirstModal .ApartInfoBox {
+		display:inline-block;
+	}
+	.FloorFirstModal .FloorImageDiv {
+		padding-left: 10px;
+		padding-right: 0px;
+		margin-top: 40px;
+	}
+	.modal {
+		z-index: 9999999;
+	}
+	.MyModal .Close {
+		width: 35px;
+		height: 35px; 
+		top: 10px;
+		right: 10px;
+	}
+	.MyModal .Close:before,
+	.MyModal .Close:after {
+		left: 6px;
+		top: 12.5px;
+	}
+	.ApartInfoBox.ApartInfoBox222 {
+		width:100%;
+	}
+	.ApartInfoBox.ApartInfoBox333 .NumbersDiv .ApartNumber {
+		font-size:14px;
+		overflow:hidden;
+		width:calc(100% - 182px) !important
+	}
+	.ApartInfoBox .NumbersDiv .FloorNumber {
+		padding-left:48px;
+		width:100px;
+		font-size: 33px;
+	}
+	.ApartInfoBox .NumbersDiv .Sold {
+		width:60px;
+		font-size: 14px;
+	}
+	
+}
+
+@media (min-width:992px) {
+	.Hamburger {
+		display:none;
+	}
+}
+
+
+@media (max-width:1440px) {
+	.ContactButtons a {
+		font-size:15px !important;
+		padding: 6px !important;
+		padding-left:40px !important; 
+	}
+	.ContactButtons a.Facebook {  
+		background-size: 17px 17px  !important;
+		background-position: 12px 8px  !important;
+		
+	}
+	.ContactButtons a.Messenger {  
+		background-size: 17px 17px !important;
+		background-position: 12px 8px  !important;	
+	}
+	
+	
+}
+
+
+@media (max-width:640px) {
+	 
+}
