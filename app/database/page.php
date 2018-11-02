@@ -271,6 +271,51 @@ class page
 		return json_decode($fetch, true);
 	}
 
+	private function selectPhotoWithUsefullType($args)
+	{
+		$fetch = array();
+		$select = "SELECT 
+			`navigation`.`idx`,
+			`navigation`.`cid` AS cid1,
+			`navigation`.`type`,
+			`navigation`.`lang`, 
+			(
+				SELECT 
+				`navigation`.`idx` AS idx2
+				FROM
+				`navigation`
+				WHERE 
+				`navigation`.`idx`=cid1
+				LIMIT 1
+			) AS paertidx,
+			(
+				SELECT 
+				`photos`.`path` 
+				FROM `photos` 
+				WHERE 
+				`photos`.`parent`=`navigation`.`idx` AND 
+				`photos`.`type`=`navigation`.`type` AND 
+				`photos`.`lang`=`navigation`.`lang` AND 
+				`photos`.`status`!=:one 
+				ORDER BY `photos`.`id` ASC LIMIT 1
+			) AS photo 
+			FROM `navigation` 
+			WHERE 
+			`navigation`.`usefull_type`=:usefull_type AND 
+			`navigation`.`lang`=:lang AND 
+			`navigation`.`status`!=:one LIMIT 1";
+		$prepare = $this->conn->prepare($select);
+		$prepare->execute(array(
+			":usefull_type"=>$args["type"], 
+			":lang"=>$args["lang"], 
+			":one"=>1 
+		)); 
+		if($prepare->rowCount()){
+			$fetch = $prepare->fetch(PDO::FETCH_ASSOC);
+		}
+		return $fetch;
+	}
+
 	private function add($args)
 	{
 		$current_lang = $args["lang"];

@@ -356,6 +356,38 @@ class editModules
 				));
 			}
 
+			$getParentPhoto = new Database("page", array(
+				"method"=>"selectPhotoWithUsefullType",
+				"type"=>$output["type"],
+				"lang"=>$lang
+			));
+			$getParentPhotofetch = $getParentPhoto->getter();
+			// $form .= print_r($getParentPhotofetch, true);
+
+		  	if(
+		  		isset($getParentPhotofetch["paertidx"]) && 
+		  		$getParentPhotofetch["paertidx"]==141 // abashidze
+		  	){
+		  		$form .= functions\makeForm::label(array(
+					"id"=>"imageMapping", 
+					"for"=>"imageMappingx", 
+					"name"=>"ფოტო Mapping",
+					"require"=>""
+				));
+
+		  		$path = Config::WEBSITE_.$getParentPhotofetch["photo"];
+		  		$form .= "<div style=\"background:#cccccc; padding:15px;\">";
+				$form .= "<div id=\"photoPathx\" style=\"margin:10px 0 0 0; border:solid 1px #f2f2f2; color:#555555; padding: 5px; background:#cccccc\">{$path}</div>";
+
+		  		$form .= "<div style=\"width:100%; height:375px; text-align: center; margin:20px auto;\">";
+				
+				$form .= "<iframe src=\"https://www.image-map.net/\" style=\"width:100%; height:375px;\"></iframe>";
+
+				$form .= "</div>";
+				$form .= "</div>";
+				$form .= "<div style=\"clear:both\"></div>";
+			}
+
 
 
 			/*
@@ -484,26 +516,6 @@ class editModules
 
 		  		$form .= "</ul>";
 		  	}
-
-		  	if(isset($fetch["imageMapping"]) && $fetch["imageMapping"]["visibility"]=="true"){
-		  		$form .= functions\makeForm::label(array(
-					"id"=>"imageMapping", 
-					"for"=>"imageMappingx", 
-					"name"=>$fetch["imageMapping"]["title"], //"ფოტო Mapping",
-					"require"=>""
-				));
-
-		  		// $path = Config::WEBSITE_.$pictures[0]["path"];
-		  		$path = "http://atori.ge/public/filemanager/projects/abashidze55/1-7/floor.png";
-				$form .= "<div id=\"photoPathx\" style=\"margin:20px 0 0 0; border:solid 1px #f2f2f2; color:#555555; padding: 5px; background:#cccccc\">{$path}</div>";
-
-		  		$form .= "<div style=\"width:100%; height:475px; text-align: center; margin:20px auto;\">";
-				
-				$form .= "<iframe src=\"https://www.image-map.net/\" style=\"width:100%; height:575px;\"></iframe>";
-
-				$form .= "</div>";
-				$form .= "<div style=\"clear:both\"></div>";
-			}
 
 
 
