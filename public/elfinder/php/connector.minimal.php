@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0); // Set E_ALL for debuging
 
-if(!isset($_SESSION["marneuli_username"]))
+if(!isset($_SESSION["atori_username"]))
 {
 	exit();
 }

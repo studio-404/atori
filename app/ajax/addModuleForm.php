@@ -205,7 +205,20 @@ class addModuleForm
 				"require"=>""
 			));
 			/*custom input type start*/
-			if($moduleSlug=="abashidze34-floor-11538991181"){
+			if(
+				$moduleSlug=="slug15409079411540907976" || 
+				$moduleSlug=="slug15409100611540910065" || 
+				$moduleSlug=="slug15409101591540910180" || 
+				$moduleSlug=="slug15409102071540910228" || 
+				$moduleSlug=="slug15409102351540910255" || 
+				$moduleSlug=="slug15409102871540910308" || 
+				$moduleSlug=="slug15409103161540910353" || 
+				$moduleSlug=="slug15409124651540912667" || 
+				$moduleSlug=="slug15409136131540913716" || 
+				$moduleSlug=="slug15409183221540918367" || 
+				$moduleSlug=="slug15409184531540918464" || 
+				$moduleSlug=="slug15409832561540983413" 
+			){
 				$form .= functions\makeForm::select(array(
 					"id"=>"additional2",
 					"name"=>"additional2",
@@ -309,6 +322,38 @@ class addModuleForm
 				"value"=>""
 			));
 		}
+
+
+		$getParentPhoto = new Database("page", array(
+				"method"=>"selectPhotoWithUsefullType",
+				"type"=>$moduleSlug,
+				"lang"=>$lang
+			));
+			$getParentPhotofetch = $getParentPhoto->getter();
+			
+		  	if(
+		  		isset($getParentPhotofetch["paertidx"]) && 
+		  		$getParentPhotofetch["paertidx"]==141 // abashidze
+		  	){
+		  		$form .= functions\makeForm::label(array(
+					"id"=>"imageMapping", 
+					"for"=>"imageMappingx", 
+					"name"=>"ფოტო Mapping",
+					"require"=>""
+				));
+
+		  		$path = Config::WEBSITE_.$getParentPhotofetch["photo"];
+		  		$form .= "<div style=\"background:#cccccc; padding:15px;\">";
+				$form .= "<div id=\"photoPathx\" style=\"margin:10px 0 0 0; border:solid 1px #f2f2f2; color:#555555; padding: 5px; background:#cccccc\">{$path}</div>";
+
+		  		$form .= "<div style=\"width:100%; height:375px; text-align: center; margin:20px auto;\">";
+				
+				$form .= "<iframe src=\"https://www.image-map.net/\" style=\"width:100%; height:375px;\"></iframe>";
+
+				$form .= "</div>";
+				$form .= "</div>";
+				$form .= "<div style=\"clear:both\"></div>";
+			}
 
 
 		/*
