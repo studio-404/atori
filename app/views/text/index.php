@@ -62,7 +62,7 @@ $photo = (isset($data["pageData"]["photo"])) ? Config::WEBSITE_.$data["pageData"
     <footer class="Footer">
         <div class="container-fluid AtoriContainer">
             <div class="CopyRight">
-                &copy; 2018 Atori Development & Enviroment
+                &copy; <?=$l->translate("footertext")?>
             </div>
         </div>
     </footer> 

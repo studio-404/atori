@@ -222,14 +222,14 @@ class addPageForm
 			$form .= functions\makeForm::label(array(
 				"id"=>"longDescription", 
 				"for"=>"pageText", 
-				"name"=>"ვრცელი აღწერა",
+				"name"=>"აღწერა",
 				"require"=>""
 			));
 
 			$form .= functions\makeForm::textarea(array(
 				"id"=>"pageText",
 				"name"=>"pageText",
-				"placeholder"=>"ვრცელი აღწერა",
+				"placeholder"=>"აღწერა",
 				"value"=>""
 			));
 		}else{
@@ -240,14 +240,14 @@ class addPageForm
 			$form .= functions\makeForm::label(array(
 				"id"=>"termsLabel", 
 				"for"=>"terms", 
-				"name"=>"ვადები",
+				"name"=>"დეტალური ინფორმაცია",
 				"require"=>""
 			));
 
 			$form .= functions\makeForm::textarea(array(
 				"id"=>"terms",
 				"name"=>"terms",
-				"placeholder"=>"ვადები",
+				"placeholder"=>"დეტალური ინფორმაცია",
 				"value"=>""
 			));
 		}else{

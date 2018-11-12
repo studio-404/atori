@@ -70,11 +70,7 @@ echo $data['headerModule'];// assets
                                       var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
                                       var markerIcon = {
-                                            url: '<?=Config::PUBLIC_FOLDER?>images/map_pin.png',
-                                            scaledSize: new google.maps.Size(38, 49),
-                                            origin: new google.maps.Point(0, 0),
-                                            anchor: new google.maps.Point(32,65),
-                                            labelOrigin:  new google.maps.Point(40,33),
+                                            url: '<?=Config::PUBLIC_FOLDER?>img/<?=(isset($_SESSION["LANG"]) && $_SESSION["LANG"]=="ge") ? "map_ge.png" : "map_en.png"?>'
                                           };
                                       
                                       //var markerLabel = 'Burdzgla street N343';
@@ -98,7 +94,9 @@ echo $data['headerModule'];// assets
                                     <?=strip_tags($data["contact"][2]["description"])?>
                                 </li>
                                 <li class="Mob">
-                                    <a href="tel:<?=strip_tags($data["contact"][0]["description"])?>"><?=strip_tags($data["contact"][0]["description"])?></a>
+                                    <a style="display: block;" href="tel:<?=strip_tags(str_replace(array(" ","&#10;","&nbsp;"),"",$data["contact"][0]["description"]))?>"><?=strip_tags($data["contact"][0]["description"])?></a>
+                                    <a style="display: block;" href="tel:<?=strip_tags($data["contact"][6]["description"])?>"><?=strip_tags($data["contact"][6]["description"])?></a>
+                                    <a style="display: block;" href="tel:<?=strip_tags($data["contact"][7]["description"])?>"><?=strip_tags($data["contact"][7]["description"])?></a>
                                 </li>                            
                             </div>
                             <div class="ContactButtons">
@@ -123,7 +121,7 @@ echo $data['headerModule'];// assets
 <footer class="Footer">
     <div class="container-fluid AtoriContainer">
         <div class="CopyRight">
-            &copy; 2018 Atori Development & Enviroment
+            &copy; <?=$l->translate("footertext")?>
         </div>
     </div>
 </footer> 

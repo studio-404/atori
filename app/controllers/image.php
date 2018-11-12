@@ -21,6 +21,9 @@ class Image extends Controller
 
 		$filename = explode(Config::WEBSITE, $f);
 
+		$w = (!is_numeric($w) || $w==0) ? null : $w;
+		$h = (!is_numeric($h) || $h==0) ? null : $h;
+
 
 		if(isset($filename[1]) && file_exists($filename[1])){
 			$fileSize = filesize($filename[1]);

@@ -10,9 +10,9 @@ echo $data['headerModule'];
 
 $backimage = "";
 if(isset($data["photos"][1]["path"])){
-	$backimage = Config::WEBSITE.$data["photos"][1]["path"];
+	$backimage = Config::WEBSITE_.$data["photos"][1]["path"];
 }else if(isset($data["productGetter"]["photo"])){
-	$backimage = Config::WEBSITE.$data["productGetter"]["photo"];
+	$backimage = Config::WEBSITE_.$data["productGetter"]["photo"];
 }
 ?>
 
@@ -20,7 +20,7 @@ if(isset($data["photos"][1]["path"])){
 		<div class="SectionHeight">
 			<div class="container-fluid AtoriContainer_2">
 				<div class="ApartamentDiv White">
-					<img src="<?=$backimage?>"/>
+					<img src="<?=Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".$backimage."&w=1400&h=600"?>"/>
 				</div>
 				<div class="ApartamentInfo">
 					<div class="container-fluid">
@@ -66,7 +66,7 @@ if(isset($data["photos"][1]["path"])){
 							</div>
 							<div class="col-sm-8 FullHeight animated fadeInRight">
 								<div class="ComplatedDivInfo">
-									<img src="<?=$data["productGetter"]["photo"]?>"/>
+									<img src="<?=Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$data["productGetter"]["photo"]."&w=400&h=580"?>"/>
 								</div>							
 							</div>
 						</div>	

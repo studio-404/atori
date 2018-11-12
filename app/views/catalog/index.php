@@ -4,22 +4,30 @@ require_once("app/functions/strip_output.php");
 require_once("app/functions/string.php"); 
 require_once 'app/functions/request.php';
 require_once 'app/functions/pagination.php';
+require_once 'app/functions/detectMobile.php';
 
 $l = new functions\l(); 
 $pagination = new functions\pagination(); 
 echo $data['headerModule']; 
 
  $imageMap = "";
-if($data["pageData"]["idx"]==141){ $imageMap = "/public/filemanager/projects/abashidze55/imap.png"; }
 
-if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; }
+if(functions\detectMobile::index()){
+	// $path = Config::WEBSITE."/ge/"
+	if($data["pageData"]["idx"]==141){ $imageMap = "/public/filemanager/projects/abashidze55/imap.png"; }
+	if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; }
+}else{
+	if($data["pageData"]["idx"]==141){ $imageMap = "/public/filemanager/projects/abashidze55/imap.png"; }
+	if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; }
+}
+
 ?> 
 
 <section class="ProjectInside" id="MainSection">
 		<div class="SectionHeight">
 			<div class="container-fluid AtoriContainer_2">
 				<div class="ApartamentDiv">
-					<img src="<?=(isset($data["photos"][1]["path"])) ? $data["photos"][1]["path"] : ''?>"/>
+					<img src="<?=(isset($data["photos"][1]["path"])) ? Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$data["photos"][1]["path"]."&w=1400&h=600" : ''?>"/>
 				</div>
 				<div class="ApartamentInfo">
 					<div class="container-fluid">
@@ -27,8 +35,11 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 							<div class="col-sm-4 animated fadeInLeft">
 								<div class="MobileSelectFloor">
 									<select id="SelectOpenModal">
-										<option value=""><?=$l->translate("choosefloor")?></option>
-										<?php 
+										<?php
+										if($data["pageData"]["idx"]!=178){// if not atori 
+										?>
+										<option value=""><?=$l->translate("choosefloor")?></option> 
+										<?php
 										foreach($data["floors"] as $floor): 
 											$floorNum = 0;
 											if(preg_match("/\d+/", $floor["title"], $match)){
@@ -36,14 +47,26 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 											}
 										?>
 											<option value="<?=$floor["idx"]?>" data-floor="<?=$floorNum?>"><?=$floor["title"]?></option>
-										<?php endforeach; ?>
+										<?php 
+										endforeach;
+										}
+										?>
 									</select>
 									<div class="ApartInfoBox ApartInfoBox222">
 										<div class="NumbersDiv">
 											<div class="FloorNumber"></div>
-											<div class="ApartNumber"><?=$l->translate("choosefloor")?></div>											
+											<div class="ApartNumber">
+												<?php
+												if($data["pageData"]["idx"]!=178){
+													echo $l->translate("choosefloor");
+												}else{
+													echo ($_SESSION["LANG"]=="en") ? "Comming soon" : "მალე";
+												} 
+												?>
+											</div>											
 											<div class="Floor">
-												<?=count($data["floors"])?>
+												<?php /* echo count($data["floors"]); */ ?>
+												<i class="fa fa-chevron-down"></i>
 											</div>
 										</div>
 									</div>
@@ -85,6 +108,12 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 										</div>
 									</div>
 								</div>
+
+								<div class="RightIcons">
+									<li class="OpenGallery"><div class="Icon Gallery"></div><span><?=$l->translate("gallery")?></span></li>
+									<li class="OpenLocation"><div class="Icon Location"></div><span><?=$l->translate("location")?></span></li>
+									<li class="OpenTerms"><div class="Icon Terms"></div><span><?=$l->translate("terms")?></span></li>
+								</div>
 							</div>
 							<div class="col-sm-8 FullHeight">			
 								<div class="MapAreaDiv animated fadeInUp">
@@ -93,7 +122,7 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 										<?php 
 										foreach($data["floors"] as $floor): 
 											if($data["pageData"]["idx"]==178){//atori
-												$size = "Page is Under Construction";
+												$size = ($_SESSION["LANG"]=="en") ? "Comming soon" : "მალე";
 												$class = "UnderConstruction";
 											}else{//abashidze
 												preg_match("/\d+/", $floor["title"], $match);
@@ -162,7 +191,7 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 											  var markerLatLng = new google.maps.LatLng(<?=$lat?>, <?=$long?>);
 
 											  var mapOptions = {
-												zoom: 19,
+												zoom: 16,
 												center: markerLatLng,
 												disableDefaultUI: true,
 												mapTypeId: google.maps.MapTypeId.ROADMAP,	
@@ -198,11 +227,7 @@ if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/ato
 						</div>	
 					</div>
 					
-					<div class="RightIcons">
-						<li class="OpenGallery"><div class="Icon Gallery"></div><span><?=$l->translate("gallery")?></span></li>
-						<li class="OpenLocation"><div class="Icon Location"></div><span><?=$l->translate("location")?></span></li>
-						<li class="OpenTerms"><div class="Icon Terms"></div><span><?=$l->translate("terms")?></span></li>
-					</div>
+					
 					
 				</div>
 			</div> 

@@ -223,3 +223,18 @@ table a{ color: #2bbbad; padding: 0 5px; }
   color: white;
   font-family: roboto;
 }
+
+.sqlcommand{
+  margin:0;
+  padding: 10px;
+  width: calc(100% - 2px);
+  height: 350px;
+  background-color: #f2f2f2;
+  border: solid 1px #cccccc;
+}
+.sqlgo{
+  margin: 10px 0px;
+  background-color: green;
+  color: white;
+  padding: 5px;
+}

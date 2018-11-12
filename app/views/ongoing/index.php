@@ -26,7 +26,9 @@ echo $data['headerModule'];
 							foreach($data["ongoing"] as $item): ?>
 							<a href="/<?=$_SESSION["LANG"]?>/<?=$item["slug"]?>" class="col-sm-6 animsition-link animated fadeInLeft">
 								<div class="Item">
-									<div class="Image"><img src="<?=Config::WEBSITE_.$item["photo"]?>"/></div>
+									<div class="Image">
+										<img src="<?=Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$item["photo"]?>&w=1200&h=1050"/>
+									</div>
 									<div class="Title"><?=$item["title"]?></div>
 									<div class="Text"><?=$item["aditional1"]?><br><?=$item["aditional2"]?></div>
 								</div>

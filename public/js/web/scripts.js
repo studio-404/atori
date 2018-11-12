@@ -1,5 +1,6 @@
 var Config = {
 	website:"http://atori.ge/",
+	website_:"http://atori.ge",
 	ajax:"http://atori.ge/ge/ajax/index", 
 	pleaseWait:"მოთხოვნა იგზავნება...",
 	mainLanguage:"ge"
@@ -17,6 +18,15 @@ $(document).ready(function() {
 
 		 
 	$('.AboutInfo').slimScroll({
+		height: '100%',
+		railVisible: false,
+		alwaysVisible: false,
+		wheelStep: 30, 
+		allowPageScroll : false,
+	});
+	
+	
+	$('.TermsDivContent').slimScroll({
 		height: '100%',
 		railVisible: false,
 		alwaysVisible: false,
@@ -165,7 +175,7 @@ $(document).ready(function() {
 	$('#ApartamentModal').on('shown.bs.modal', function() {
         $(document).off('focusin.modal');
     });
-		
+if (document.documentElement.clientWidth > 992) {		
 	//$('#PlanModal').modal('toggle');
 	$("#PlanModal").on("shown.bs.modal", function() {
 		$('map').imageMapResize();	
@@ -178,7 +188,8 @@ $(document).ready(function() {
 			strokeOpacity: 1, 
 		});
 	})
-	
+}	
+if (document.documentElement.clientWidth > 992) {	
 	$('map').imageMapResize();	
 	$('.map').maphilight({ 
 		fillColor: '40a7f4',
@@ -188,7 +199,7 @@ $(document).ready(function() {
 		strokeColor: '40a7f4',
 		strokeOpacity: 1, 
 	});
-	 
+}	 
 	 
 	 
 		
@@ -396,6 +407,8 @@ $(document).on("click", ".g-floor", function(){
 				.css({ top: mousey, left: mousex })
 			});
 
+
+
 		}else{
 			var text = obj.Error.Text;
 		}
@@ -491,5 +504,3 @@ $(document).on("click", ".closeCalc", function(){
 	$(".CalcParentDiv").removeClass("Right0"); 
 	$(".CalcBackgrond").removeClass("Show"); 
 });
-
-

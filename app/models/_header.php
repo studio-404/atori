@@ -39,11 +39,15 @@ class _header
 		$out .= "<meta charset=\"utf-8\">\n";
 
 		$out .= sprintf("<title>%s - Atori</title>\n", strip_tags($title));
-		$out .= "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
+		// $out .= "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
+		$out .= "<meta name=\"viewport\" content=\"width=360, user-scalable=no\" />\n";
 
 		$actual_link = "http://".$_SERVER["HTTP_HOST"].htmlentities($_SERVER["REQUEST_URI"]);
 		
-		$out .= "<meta property=\"fb:app_id\" content=\"\" />\n";
+		$out .= sprintf(
+			"<meta property=\"fb:app_id\" content=\"%s\" />\n",
+			Config::FB_APP
+		);
 		$out .= "<meta property=\"og:title\" content=\"".strip_tags($title)."\" />\n";
 		$out .= "<meta property=\"og:type\" content=\"website\" />\n";
 		$out .= "<meta property=\"og:url\" content=\"".$actual_link."\"/>\n";
@@ -198,8 +202,9 @@ class _header
 
 		if(isset($_SESSION['LANG']) && $_SESSION['LANG']=="ge"){
 			  $out .= sprintf(
-				"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/geo.css\" />\n", 
-				$this->public
+				"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/geo.css?t=%s\" />\n", 
+				$this->public,
+				time()
 			);
 		}
 
@@ -294,6 +299,42 @@ class _header
 				);	
 			}
 		endforeach;
+
+		
+		$out .= "<div class=\"Language MobileLanguage\">\n";
+		if($actual_link==Config::WEBSITE){
+			$out .= sprintf(
+				"<a href=\"%s\" class=\"active\">ge</a>\n",
+				$actual_link."ge/home"
+			);
+			$out .= sprintf(
+				"<a href=\"%s\">en</a>\n",
+				$actual_link."en/home"
+			);
+		}else if($_SESSION["LANG"]=="ge"){
+			$out .= sprintf(
+				"<a href=\"%s\" class=\"active\">ge</a>\n",
+				$actual_link
+			);
+			$out .= sprintf(
+				"<a href=\"%s\">en</a>\n",
+				str_replace("/ge/", "/en/", $actual_link)
+			);
+		}else{
+			$out .= sprintf(
+				"<a href=\"%s\">ge</a>\n",
+				str_replace("/en/", "/ge/", $actual_link)
+			);
+			$out .= sprintf(
+				"<a href=\"%s\" class=\"active\">en</a>\n",
+				$actual_link
+			);
+		}
+
+
+		$out .= "</div>\n";
+
+
 
 		$out .= "</div>\n";
 

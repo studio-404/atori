@@ -1,6 +1,9 @@
-
-
-
+.HeaderMenu li a {
+	text-transform: lowercase;
+}
+.FloorToolTip label {
+	font-family:HelveticaNeueLTGEOW8245LtRegular;
+}
 
 .HeaderMenu li a {
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
@@ -58,12 +61,14 @@
 }
 .ComplatedDiv .Item .Title {
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size:19px;
 }
 
 
 
 .ApartamentInfo .InfoBox .Head {
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
+	font-size:25px;
 }
 .ApartamentInfo .InfoBox .Content .Text {
 	font-family:NotoSansGeorgian;
@@ -97,7 +102,7 @@
 .AboutPage .AboutInfo .Text {
 	font-family:NotoSansGeorgian;
 	font-size: 15px;
-    line-height: 23px;
+    line-height: 23px; 
 }
 .AboutPage .AboutImage .CorporateBrochure {
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
@@ -134,3 +139,17 @@
     font-weight: bold;
 }
 
+
+.Form .Button1{
+	text-transform: lowercase !important;
+}
+
+.appartment-soldlist div{
+	text-transform: lowercase !important;	
+}
+
+.CopyRight{
+	font-family: 'NotoSansRegular' !important;
+	text-transform: lowercase !important;
+	font-size: 14px !important;
+}

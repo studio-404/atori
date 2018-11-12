@@ -6,6 +6,7 @@ class _slider
 	public function index()
 	{
 		require_once("app/functions/strip_output.php"); 
+		require_once("app/functions/detectMobile.php"); 
 		require_once("app/functions/l.php");
 		$l = new functions\l();
 
@@ -27,7 +28,16 @@ class _slider
 				));
 				if($photos->getter()){
 					$pic = $photos->getter();
-					$image = strip_output::index($pic[0]['path']);
+					
+					if(functions\detectMobile::index()){
+						$w = 750;
+						$h = 525;
+					}else{
+						$w = 1500;
+						$h = 1050;
+					}
+
+					$image = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.strip_output::index($pic[0]['path'])."&w=".$w."&h=".$h;
 				}else{
 					$image = "/public/filemanager/noimage.png";
 				}
@@ -54,7 +64,7 @@ class _slider
 					"<a href=\"%s\" class=\"LearnMore animated\" data-animation-in=\"fadeInUp\" data-delay-in=\"1\">\n",
 					strip_tags($value['url'])
 				);
-				$out["list"] .= sprintf("<div></div><span>%s</span>\n", $l->translate("more"));
+				$out["list"] .= sprintf("<div></div><span><label>%s</label></span>\n", $l->translate("more"));
 				$out["list"] .= "</a>\n";
 				$out["list"] .= "</div>\n";
 				$out["list"] .= "</div>\n";
@@ -64,4 +74,5 @@ class _slider
 		
 		return $out;
 	}
+
 }

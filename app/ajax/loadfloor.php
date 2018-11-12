@@ -11,6 +11,7 @@ class loadfloor
 	public function index(){
 		require_once 'app/core/Config.php';
 		require_once 'app/functions/request.php';
+		require_once("app/functions/detectMobile.php"); 
 		require_once("app/functions/l.php"); 
 		$l = new functions\l(); 
 
@@ -106,9 +107,11 @@ class loadfloor
 
 			$floor_out .= "<div class=\"col-sm-6 zoomIn animated\">";
 			$floor_out .= "<div class=\"FloorImageDiv\">";
+
+			$image = $fetch["photo"];
 			$floor_out .= sprintf(
 				"<img src=\"%s\" class=\"map\" usemap=\"#PlaMap\"/>",
-				$fetch["photo"]
+				$image
 			);
 			$floor_out .= "<div class=\"appartment-soldlist\">";
 			$floor_out .= $soldlist;
