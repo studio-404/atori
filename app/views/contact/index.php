@@ -95,8 +95,8 @@ echo $data['headerModule'];// assets
                                 </li>
                                 <li class="Mob">
                                     <a style="display: block;" href="tel:<?=strip_tags(str_replace(array(" ","&#10;","&nbsp;"),"",$data["contact"][0]["description"]))?>"><?=strip_tags($data["contact"][0]["description"])?></a>
-                                    <a style="display: block;" href="tel:<?=strip_tags($data["contact"][6]["description"])?>"><?=strip_tags($data["contact"][6]["description"])?></a>
-                                    <a style="display: block;" href="tel:<?=strip_tags($data["contact"][7]["description"])?>"><?=strip_tags($data["contact"][7]["description"])?></a>
+                                    <a style="display: block;" href="tel:<?=strip_tags(str_replace(array(" ","&#10;","&nbsp;"),"", $data["contact"][6]["description"]))?>"><?=strip_tags($data["contact"][6]["description"])?></a>
+                                    <a style="display: block;" href="tel:<?=strip_tags(str_replace(array(" ","&#10;","&nbsp;"),"", $data["contact"][7]["description"]))?>"><?=strip_tags($data["contact"][7]["description"])?></a>
                                 </li>                            
                             </div>
                             <div class="ContactButtons">
