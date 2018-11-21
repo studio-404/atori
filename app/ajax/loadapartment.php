@@ -46,6 +46,8 @@ class loadapartment
 			$apartment_all = new Database('modules', array(
 					'method'=>'selectModuleByType', 
 					'type'=>$fetch["type"], 
+					'order'=>'title', 
+					'by'=>'ASC', 
 					'lang'=>$lang
 			));
 			$apartment_all_fetch = $apartment_all->getter();
@@ -69,20 +71,20 @@ class loadapartment
 			// );
 			preg_match("/\d+/", $fetch["title"], $match);
 			$apartment_out .= "<div class=\"FloorNumber\">";
-			$apartment_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
+			$apartment_out .= "<span id=\"floorNum__2\">".$match[0]."</span>";
 			
 			$apartment_out .= "<div class=\"FloorChangeSelect\">";				
 			$apartment_out .= "<select class=\"selectpicker floorSelector2\">";			
-			$i=1;
+			
 			foreach($apartment_all_fetch as $v):
-			$act = ($i==$match[0]) ? 'selected="selected"' : '';
+			preg_match("/\d+/", $v["title"], $match2);
+			$act = ($match2[0]==$match[0]) ? 'selected="selected"' : '';
 			$apartment_out .= sprintf(
 				"<option value=\"%s\" %s>%s</option>",
 				$v['idx'],
 				$act,
-				$i
+				$match2[0]
 			);
-			$i++;
 			endforeach;
 			$apartment_out .= "<select>";
 			$apartment_out .= "</div>";

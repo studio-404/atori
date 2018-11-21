@@ -81,7 +81,8 @@ class loadfloor
 					);
 				}else{
 					$mapping .= sprintf(
-						"<area class=\"masterTooltip\" shape=\"poly\" coords=\"%s\" Size=\"%s %s\" onclick=\"loadApartment(%d,%d)\" />",
+						"<area class=\"masterTooltip flooorGegma_%s\" shape=\"poly\" coords=\"%s\" Size=\"%s %s\" onclick=\"loadApartment(%d,%d)\" />",
+						$v["idx"],
 						$v["additional3"],
 						htmlentities("<span>".$v["classname"]."</span>"),
 						$l->translate("sqm", $lang),
@@ -97,9 +98,9 @@ class loadfloor
 			
 			$floor_out .= "<div class=\"FloorNumber\">";
 			$floor_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
-			$floor_out .= "<div class=\"FloorChangeSelect\">";			
-			$floor_out .= "<select class=\"selectpicker floorSelector\">";
 			
+			$floor_out .= "<div class=\"FloorChangeSelect\">";				
+			$floor_out .= "<select class=\"selectpicker floorSelector\">";			
 			$i=1;
 			foreach($flat_floors_fetch as $v):
 			$act = ($i==$match[0]) ? 'selected="selected"' : '';
@@ -111,10 +112,8 @@ class loadfloor
 			);
 			$i++;
 			endforeach;
-
 			$floor_out .= "<select>";
 			$floor_out .= "</div>";
-
 			$floor_out .= "</div>";
 
 
