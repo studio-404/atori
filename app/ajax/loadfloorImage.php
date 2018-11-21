@@ -1,5 +1,5 @@
 <?php
-class loadfloor
+class loadfloorImage
 {
 	public $out; 
 	
@@ -38,10 +38,12 @@ class loadfloor
 		}else{
 			$floor = new Database('page', array(
 					'method'=>'selectById', 
-					'idx'=>$floorid, 
+					'idx'=>(int)$floorid, 
 					'lang'=>$lang
 			));
 			$fetch = $floor->getter();
+
+			// echo print_r($fetch, true);
 
 			$rooms = new Database("modules", array(
 				"method"=>"selectModuleByType", 
@@ -91,63 +93,64 @@ class loadfloor
 				}
 			}
 			
-			$floor_out = "<div class=\"col-sm-6 zoomIn animated\">";
-			$floor_out .= "<div class=\"ApartInfoBox ApartInfoBox222 ApartInfoBox333\">";
-			$floor_out .= "<div class=\"NumbersDiv\">";
+			// $floor_out = "<div class=\"col-sm-6 zoomIn animated\">";
+			// $floor_out .= "<div class=\"ApartInfoBox ApartInfoBox222 ApartInfoBox333\">";
+			// $floor_out .= "<div class=\"NumbersDiv\">";
 			
-			$floor_out .= "<div class=\"FloorNumber\">";
-			$floor_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
-			$floor_out .= "<div class=\"FloorChangeSelect\">";			
-			$floor_out .= "<select class=\"selectpicker floorSelector\">";
-			
-			$i=1;
-			foreach($flat_floors_fetch as $v):
-			$act = ($i==$match[0]) ? 'selected="selected"' : '';
-			$floor_out .= sprintf(
-				"<option value=\"%s\" %s>%s</option>",
-				$v['idx'],
-				$act,
-				$i
-			);
-			$i++;
-			endforeach;
+			// $floor_out .= "<div class=\"FloorNumber\">";
 
-			$floor_out .= "<select>";
-			$floor_out .= "</div>";
+			// $floor_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
+			// $floor_out .= "<div class=\"FloorChangeSelect\">";			
+			// $floor_out .= "<select class=\"selectpicker floorSelector\">";
+			// for ($i=1; $i <= count($flat_floors_fetch); $i++) { 
+			// 	$act = ($i==$match[0]) ? 'selected="selected"' : '';
+			// 	$floor_out .= sprintf(
+			// 		"<option value=\"%s\" %s>%s</option>",
+			// 		$i,
+			// 		$act,
+			// 		$i
+			// 	);
+			// }
+			// $floor_out .= "<select>";
+			// $floor_out .= "</div>";
 
-			$floor_out .= "</div>";
+			// $floor_out .= "</div>";
 
 
-			$floor_out .= sprintf(
-				"<div class=\"ApartNumber\">%d %s</div>",
-				$avaliable,
-				$l->translate("propertyleft", $lang)
-			);
-			$floor_out .= sprintf(
-				"<div class=\"Sold\">%d %s</div>",
-				$sold,
-				$l->translate("sold", $lang)
-			);
-			$floor_out .= "</div>";
-			$floor_out .= "</div>";
-			$floor_out .= "</div>";
+			// $floor_out .= sprintf(
+			// 	"<div class=\"ApartNumber\">%d %s</div>",
+			// 	$avaliable,
+			// 	$l->translate("propertyleft", $lang)
+			// );
+			// $floor_out .= sprintf(
+			// 	"<div class=\"Sold\">%d %s</div>",
+			// 	$sold,
+			// 	$l->translate("sold", $lang)
+			// );
+			// $floor_out .= "</div>";
+			// $floor_out .= "</div>";
+			// $floor_out .= "</div>";
 
-			$floor_out .= "<div class=\"col-sm-6 zoomIn animated\">";
-			$floor_out .= "<div class=\"FloorImageDiv\">";
+			// $floor_out .= "<div class=\"col-sm-6 zoomIn animated\">";
+
+
+			// $floor_out .= "<div class=\"FloorImageDiv\">";
 
 			$image = $fetch["photo"];
-			$floor_out .= sprintf(
+			$floor_out = sprintf(
 				"<img src=\"%s\" class=\"map\" usemap=\"#PlaMap\"/>",
 				$image
 			);
 			$floor_out .= "<div class=\"appartment-soldlist\">";
 			$floor_out .= $soldlist;
 			$floor_out .= "</div>";
+
 			$floor_out .= "<map name=\"PlaMap\">";
 			$floor_out .= $mapping;
 			$floor_out .= "</map>";
-			$floor_out .= "</div>";
-			$floor_out .= "</div>";
+
+			// $floor_out .= "</div>";
+			// $floor_out .= "</div>";
 			
 			
 			

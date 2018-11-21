@@ -384,6 +384,14 @@ $(document).on("click", ".sendEmail", function(){
 	});
 });
 
+function floorChange(floorid){
+	//$("#PlanModal").modal("hide");
+	$("#PlanModal").modal('hide');
+	setTimeout(function() {
+       $(".g-floor[data-floorid='"+floorid+"']").click();
+   	}, 100);
+}
+
 
 $(document).on("click", ".g-floor", function(){
 	var ajaxFile = "/loadfloor";
@@ -422,6 +430,13 @@ $(document).on("click", ".g-floor", function(){
 
 
 			$(".selectpicker").selectpicker();
+
+			$(".selectpicker").on("changed.bs.select", function(e, clickedIndex, newValue, oldValue) {
+			    console.log(this.value, clickedIndex, newValue, oldValue);
+			    var selectedText = $(this).find("option:selected").text();
+			    $("#floorNum__").text(selectedText);
+			    floorChange(this.value);
+			});
 
 
 
@@ -520,3 +535,9 @@ $(document).on("click", ".closeCalc", function(){
 	$(".CalcParentDiv").removeClass("Right0"); 
 	$(".CalcBackgrond").removeClass("Show"); 
 });
+
+// $(document).on("change", ".floorSelector", function(e){
+// 	var val = e.value;
+// 	console.log($(this).val());
+// 	$("#floorNum__").text(val);
+// });
