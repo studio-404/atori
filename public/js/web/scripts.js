@@ -26,6 +26,8 @@ $(document).ready(function() {
 	});
 	
 	
+	
+	
 	$('.TermsDivContent').slimScroll({
 		height: '100%',
 		railVisible: false,
@@ -174,12 +176,22 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#ApartamentModal').on('shown.bs.modal', function() {
         $(document).off('focusin.modal');
+		if (document.documentElement.clientWidth > 992) {	
+			$('.ApartInfoBox .Info ul').slimScroll({
+				height: '200px',
+				railVisible: true,
+				alwaysVisible: true,
+				wheelStep: 10, 
+				allowPageScroll : true,
+			});
+		}
+	
     });
-if (document.documentElement.clientWidth > 992) {		
+//if (document.documentElement.clientWidth > 992) {		
 	//$('#PlanModal').modal('toggle');
 	$("#PlanModal").on("shown.bs.modal", function() {
-		$('map').imageMapResize();	
-		$('.map').maphilight({ 
+		$('.FloorImageDiv map').imageMapResize();	
+		$('.FloorImageDiv .map').maphilight({ 
 			fillColor: '40a7f4',
 			fill: true, 
 			fillOpacity: 0.45,
@@ -188,7 +200,7 @@ if (document.documentElement.clientWidth > 992) {
 			strokeOpacity: 1, 
 		});
 	})
-}	
+//}	
 if (document.documentElement.clientWidth > 992) {	
 	$('map').imageMapResize();	
 	$('.map').maphilight({ 
@@ -299,6 +311,7 @@ $(document).ready(function() {
         pauseOnDotsHover: true,
         speed: 800,
         lazyLoad: 'progressive',
+        verticalSwiping: false ,
 
     }).slickAnimation();
 
