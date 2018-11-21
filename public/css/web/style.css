@@ -3,8 +3,11 @@ body {
     height: 100%; 
 	background:#fff url('../../images/patern.png');
 	overflow:hidden; 
+	-webkit-overflow-scrolling: touch;  
 }
-
+.HomePage {
+	overflow:hidden !important
+}
 * {outline:none !important}
 .MainDiv {
 	width:100%;
@@ -126,7 +129,7 @@ body {
 	margin-right:40px;
 	position:relative;
 }
-.Language span {
+.Language span  {
 	width:45px;
 	height:45px;
 	border:solid #fff 1px;
@@ -266,6 +269,7 @@ body {
 	font-family:GothamBook;
 	color:#fff;
 	font-size:17px;
+	line-height:21px;
 }
 .AboutPage .AboutInfo .AvardsText {
 	margin-top:20px;
@@ -376,13 +380,13 @@ body {
 } 
 .AtoriLogoBottom {
     width: 100%;
-    height: 204px;
+    height: 250px;
     background: url(../../images/atori_home_slide.png) no-repeat;
     position: absolute;
-    background-size: 100%;
+    background-size:100% auto;
     z-index: 99;
     bottom: 0;
-    background-position: bottom;
+    background-position: bottom center;
 }
 
 /*
@@ -517,7 +521,27 @@ body {
 }
 */
 
-.LearnMore {	 
+.LearnMore {
+    font-size: 17px;
+    color: #fff !important;
+    position: relative;   
+	width:200px;
+    display: inline-block;
+}
+.LearnMore div {
+	width: 42px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 19px;
+	transition:0.7s;
+}
+.LearnMore:hover div {
+	width:0; 
+	left:0
+}
+.LearnMore span{
     text-align: center;
     padding-left: 13px;
     padding-right: 13px;
@@ -526,24 +550,25 @@ body {
     font-size: 17px;
     color: #fff !important;
     position: relative;
-    margin-top: 15px;
+    margin-top: 0;
     text-decoration: none;
     z-index: 99999;
 	height:40px;
 	line-height:40px;
 	position:relative;
-	left:20px;
+	left:40px;
 	text-decoration:none !important;
+	transition:0.7s;
+	cursor:pointer;
 }
-.LearnMore:hover {
+.LearnMore span label {
+	cursor:pointer
+}
+.LearnMore:hover span {
 	left:0
 }
-.LearnMore span{
-  display: block; 
-  color:#fff;
-}
-.LearnMore::before, 
-.LearnMore::after{
+.LearnMore label::before, 
+.LearnMore label::after{
   content:"";
   width: 0;
   height: 2px;
@@ -561,8 +586,8 @@ body {
   transition: all 0.2s linear;
   background: #fff;
 }
-.LearnMore:hover::before, 
-.LearnMore:hover::after{
+.LearnMore:hover label::before, 
+.LearnMore:hover label::after{
   width: 100%;
 }
 .LearnMore:hover span::before, 
@@ -571,7 +596,7 @@ body {
   
 }
 
-.LearnMore::after{
+.LearnMore label::after{
   left: 0;
   bottom: 0;
   transition-delay: 0.6s;
@@ -581,7 +606,7 @@ body {
   right: 0;
   bottom: 0;
 }
-.LearnMore::before{
+.LearnMore label::before{
   right: 0;
   top: 0;
   transition-delay: 0.2s;
@@ -591,13 +616,13 @@ body {
   left: 0;
   top: 0;
 }
-.LearnMore:hover::after{
+.LearnMore label:hover::after{
   transition-delay: 0s;
 }
 .LearnMore:hover span::after{
   transition-delay: 0.2s;
 }
-.LearnMore:hover::before{
+.LearnMore label:hover::before{
   transition-delay: 0.4s;
 }
 .LearnMore:hover span::before{
@@ -694,6 +719,7 @@ body {
 }
 .slide .slide__img img {
   max-width: 100%;
+  width:100%;
   height: 100%;
   opacity: 1 !important;
   -webkit-animation-duration: 10s;
@@ -939,7 +965,7 @@ body {
 	bottom:25px;
 	right:0;
 	font-family:HelveticaCyrBold;
-	font-size:23px;
+	font-size:21px;
 	color:#193761;
 	padding-left: 7px;
     padding-right: 8px;
@@ -1346,7 +1372,7 @@ a.Button2:hover {
 .ApartamentInfo .InfoBox .Head {
 	font-family: GothamBold;
     color: #fcff00;
-    font-size: 37px;
+    font-size: 30px;
 	padding-bottom:10px;
 	position:relative;
 }
@@ -1373,7 +1399,12 @@ a.Button2:hover {
 .ApartamentInfo .InfoBox .Content .Text {
 	font-family: GothamBook;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
+	line-height:21px;
+}
+.ApartamentInfo .InfoBox .Content .Text p {
+	margin-bottom:0 !important	;
+	font-size:16px;
 }
 .ApartamentInfo .InfoBox .Content .Text p {
 	margin-bottom:25px;
@@ -1434,6 +1465,7 @@ a.Button2:hover {
     color: #fff;
     position: relative;
     top: -2px;
+	height:46px;
 }
 .ApartamentInfo .InfoBox .Content .Features .Item .Name {
 	font-family:GothamLight;
@@ -1810,6 +1842,27 @@ a.Button2:hover {
     background-size: 37px;
     background-position: 10px 11px;
     padding-left: 52px;
+	position:relative;
+}
+.ApartInfoBox .NumbersDiv .FloorNumber:after {
+	content:'';
+	width:10px;
+	height:7px;
+	background:url(../../images/arrow_up_1.png) no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+}
+.ApartInfoBox .NumbersDiv .FloorNumber:before {
+	content:'';
+	width:10px;
+	height:7px;
+	background:url(../../images/arrow_down_1.png) no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	right:10px;
+	top:10px;
 }
 .ApartInfoBox .NumbersDiv .ApartNumber {
 	width:calc(100% - 115px);
@@ -1853,6 +1906,11 @@ a.Button2:hover {
 	display:inline-block;
 	width:100%;
 	background:rgba(0,186,255, 0.8);
+	
+}
+.ApartInfoBox .Info .slimScrollDiv {
+	margin-bottom:20px;
+	margin-top:20px;
 }
 .ApartInfoBox .Info .Size {
 	font-family:GothamBold;
@@ -1869,11 +1927,11 @@ a.Button2:hover {
 .ApartInfoBox .Info ul li {
 	list-style:none;
 	display:inline-block;
-	width:100%;
+	width:calc(100% - 15px);
 	font-family:GothamBook;
 	font-size:19px;
 	color:#fff;
-	margin-bottom:1px;
+	margin-bottom:7px;
 }
 .ApartInfoBox .Info ul li span {
 	border: solid #fff 1px;
@@ -1885,7 +1943,7 @@ a.Button2:hover {
     line-height: 23px;
     font-size: 16px;
     position: relative;
-    top: -2px;
+    top: -2px; 
 }
 .ApartInfoBox .Info ul li strong, 
 .ApartInfoBox .Info ul li b
@@ -2027,9 +2085,10 @@ a.Button2:hover {
 	border-radius:100%
 }
 .ContectButton a {
-	width:65px;
-	height:65px; 
+	width:60px;
+	height:60px; 
 	display:block;
+    border-radius: 100%;
 }
 .ContectButton .Text {
 	transform: rotate(-90deg);
@@ -2041,9 +2100,31 @@ a.Button2:hover {
     color: #fcff00;
     width: 300px;
     text-align: right;
-    left: -120px;
-	text-transform:uppercase
+    left: -122px;
+	text-transform:uppercase;
 }
+.ContectButton a:hover  { 
+	animation: play 1.5s ease infinite;
+}
+@keyframes play {
+
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        box-shadow: 0 0 0 5px rgba(252, 255, 0, 0.4);
+    }
+    25% {
+        box-shadow: 0 0 0 10px rgba(252, 255, 0, 0.4), 0 0 0 20px rgba(252, 255, 0, 0.2);
+    }
+    25% {
+        box-shadow: 0 0 0 15px rgba(252, 255, 0, 0.4), 0 0 0 30px rgba(252, 255, 0, 0.2);
+    }
+
+}
+
+
+
 .ContectButton .Text:after {
 	content:'';
 	position:absolute;
@@ -2380,9 +2461,13 @@ area:after {
 .appartment-soldlist div.active {
 	display:block;
 }
+.ApartamentInfo .col-sm-4:first-child {
+	position:inherit;
+	z-index: 9;
+}
 
 
- 
+ /* 00000000000000000000000000000 */ 
 .apert_294 {position:absolute; top:321px; left:54px; width:140px; text-align:center;}
 .apert_295 {position:absolute; top:334px; left:218px; width:140px; text-align:center;}
 .apert_296 {position:absolute; top:89px; left:195px; width:140px; text-align:center;} 
@@ -2485,6 +2570,65 @@ area:after {
 .apert_282 {position:absolute; top:286px; left:98px; width:140px; text-align:center;}
 .apert_283 {position:absolute; top:286px; left:209px; width:140px; text-align:center;}
 .apert_284 {position:absolute; top:186px; left:370px; width:140px; text-align:center;}
+
+
+
+.slide {
+touch-action: auto;
+-ms-touch-action: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.FloorNumber .FloorChangeSelect {
+	position: absolute;
+    top: 0;
+    left: 38px;
+    width: 58px;
+}
+.FloorNumber .bootstrap-select > select {
+	left:-20000px;
+}
+.FloorNumber .bootstrap-select > .dropdown-toggle {
+	height:50px;
+	top: -4px;
+	opacity:0;
+}
+.FloorNumber .dropdown-menu {
+	padding:0 !important;
+	border-radius:0 !important;
+	border:0 !important;
+	box-shadow:none !important;
+}
+.FloorNumber .bootstrap-select .dropdown-menu {
+	background:#fcff00;
+	margin:0;
+	
+    top: calc(100% - 4px);
+}
+.FloorNumber .bootstrap-select .dropdown-menu li a {
+	color: #000;
+    font-family: NotoSansBold;
+    font-size: 20px;
+    line-height: 30px;
+	text-align:center;
+}
+
+.FloorNumber .dropdown-menu > li:hover a,
+.FloorNumber .dropdown-menu > .active > a, 
+.FloorNumber .dropdown-menu > .active > a:hover, 
+.FloorNumber .dropdown-menu > .active > a:focus {
+	background: linear-gradient(45deg, #6187bc, #3bacfc);
+	color:#fff !important;
+}
 
 
 
