@@ -34,6 +34,9 @@
 .ApartInfoBox .Info .Size {
 	font-family:NotoSansGeorgian;
 }
+.ApartInfoBox .Info ul li {
+	font-family:NotoSansRegular;
+}
 .ApartInfoBox .Info .Total .Name {
 	font-family:NotoSansGeorgian;
 	font-size:16px;
