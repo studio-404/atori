@@ -140,13 +140,14 @@ class modules
 		$fetch = "[]";
 		$orderBy = (isset($args["order"]) && isset($args["by"])) ? sprintf(" ORDER BY %s %s", $args["order"], $args["by"]) : "";
 		$limit = (isset($args['from']) && isset($args['num'])) ? " LIMIT ".$args["from"].",".$args['num'] : "";
+		$num = (isset($args['num'])) ? $args['num'] : "";
 		$from = (isset($args["from"])) ? $args["from"] : 0;
 		$lang = (isset($args['lang'])) ? $args['lang'] : $_SESSION["LANG"];
 		$where = (isset($args["where"])) ? $args["where"] : '';
-		$jsonAddon = (isset($args["jsonAddon"])) ? $args["jsonAddon"] : '';
+		$jsonAddon = (isset($args["jsonAddon"])) ? $args["jsonAddon"] : ''; 
 		// $visibility = (isset($args["visibility"])) ? 0 : '';
 		
-		$json = Config::CACHE."module_type_".$args['num'].str_replace(array("-"," "), "", implode("_",$_SESSION['URL']))."_".$lang.$from.$args['type'].$jsonAddon.".json";
+		$json = Config::CACHE."module_type_".$num.str_replace(array("-"," "), "", implode("_",$_SESSION['URL']))."_".$lang.$from.$args['type'].$jsonAddon.".json";
 
 
 		if(file_exists($json)){

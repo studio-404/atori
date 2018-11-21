@@ -421,6 +421,9 @@ $(document).on("click", ".g-floor", function(){
 			});
 
 
+			$(".selectpicker").selectpicker();
+
+
 
 		}else{
 			var text = obj.Error.Text;

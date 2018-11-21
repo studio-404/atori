@@ -49,6 +49,13 @@ class loadfloor
 				"lang"=>$lang
 			));
 
+			$flat_floors = new Database("page", array(
+				"method"=>"selecteByCid", 
+				"cid"=>$fetch["cid"],
+				"lang"=>$lang
+			));
+			$flat_floors_fetch = $flat_floors->getter();
+
 			$rooms_fetch = $rooms->getter();
 			$floorNum = preg_match("/\d+/", $fetch["title"], $match);
 			$mapping = "";
@@ -87,10 +94,29 @@ class loadfloor
 			$floor_out = "<div class=\"col-sm-6 zoomIn animated\">";
 			$floor_out .= "<div class=\"ApartInfoBox ApartInfoBox222 ApartInfoBox333\">";
 			$floor_out .= "<div class=\"NumbersDiv\">";
-			$floor_out .= sprintf(
-				"<div class=\"FloorNumber\">%s</div>",
-				$match[0]
-			);
+			// $floor_out .= sprintf(
+			// 	"<div class=\"FloorNumber\">%s</div>",
+			// 	$match[0]
+			// );
+			$floor_out .= "<div class=\"FloorNumber\">";
+			$floor_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
+			$floor_out .= "<div class=\"FloorChangeSelect\">";			
+			$floor_out .= "<select class=\"selectpicker floorSelector\">";
+			for ($i=1; $i <= count($flat_floors_fetch); $i++) { 
+				$act = ($i==$match[0]) ? 'selected="selected"' : '';
+				$floor_out .= sprintf(
+					"<option value=\"%s\" %s>%s</option>",
+					$i,
+					$act,
+					$i
+				);
+			}
+			$floor_out .= "<select>";
+			$floor_out .= "</div>";
+
+			$floor_out .= "</div>";
+
+
 			$floor_out .= sprintf(
 				"<div class=\"ApartNumber\">%d %s</div>",
 				$avaliable,
