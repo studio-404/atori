@@ -89,122 +89,144 @@ class _header
 		$out .= "<script src=\"https://code.jquery.com/jquery-2.2.1.min.js\"></script>\n";
 		
 		$out .= sprintf(
-			"<script src=\"%sjs/web/bootstrap.min.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/bootstrap.min.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/wow.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/wow.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/slick.min.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/slick.min.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/slick-animation.min.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/slick-animation.min.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/jquery.maphilight.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/jquery.maphilight.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/bootstrap-select.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/bootstrap-select.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/imageMapResizer.min.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/imageMapResizer.min.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/jquery.slimscroll.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/jquery.slimscroll.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/animsition/js/animsition.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/animsition/js/animsition.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/jquery.nicescroll.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/jquery.nicescroll.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<script src=\"%sjs/web/scripts.js\"></script>\n", 
-			$this->public
+			"<script src=\"%sjs/web/scripts.js?v=%s\"></script>\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 		
 		$out .= sprintf("<script src=\"https://maps.googleapis.com/maps/api/js?key=%s&language=ka\" type=\"text/javascript\"></script>\n", Config::GOOGLE_API_KEY);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/bootstrap.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/bootstrap.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 		
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/font-awesome.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/font-awesome.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/fonts.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/fonts.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animate.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animate.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/bootstrap-select.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/bootstrap-select.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/slick.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/slick.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/style.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/style.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/custom_res.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/custom_res.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/animsition.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/animsition.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/base.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/base.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		$out .= sprintf(
-			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/loading.css\" />\n", 
-			$this->public
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/animsition/css/loading.css?v=%s\" />\n", 
+			$this->public,
+			Config::WEBSITE_VERSION
 		);
 
 		if(isset($_SESSION['LANG']) && $_SESSION['LANG']=="ge"){
 			  $out .= sprintf(
-				"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/geo.css?t=%s\" />\n", 
+				"<link rel=\"stylesheet\" type=\"text/css\" href=\"%scss/web/geo.css?v=%s\" />\n", 
 				$this->public,
-				time()
+				Config::WEBSITE_VERSION
 			);
 		}
 
