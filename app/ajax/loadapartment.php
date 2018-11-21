@@ -43,6 +43,13 @@ class loadapartment
 			));
 			$fetch = $apartment->getter();
 
+			$apartment_all = new Database('modules', array(
+					'method'=>'selectModuleByType', 
+					'type'=>$fetch["type"], 
+					'lang'=>$lang
+			));
+			$apartment_all_fetch = $apartment_all->getter();
+
 			$file = new Database("file", array(
 				"method"=>"selectFilesByPageId",
 				"page_id"=>$idx,
@@ -53,16 +60,42 @@ class loadapartment
 
 
 			$apartment_out = "<div class=\"col-sm-6 zoomIn animated\">";
-			$apartment_out .= "<div class=\"ApartInfoBox\">";
+			$apartment_out .= "<div class=\"ApartInfoBox ApartInfoBox222 ApartInfoBox333\">";
 			$apartment_out .= "<div class=\"NumbersDiv\">";
+			
+			// $apartment_out .= sprintf(
+			// 	"<div class=\"FloorNumber\">%d</div>",
+			// 	$floor
+			// );
+			preg_match("/\d+/", $fetch["title"], $match);
+			$apartment_out .= "<div class=\"FloorNumber\">";
+			$apartment_out .= "<span id=\"floorNum__\">".$match[0]."</span>";
+			
+			$apartment_out .= "<div class=\"FloorChangeSelect\">";				
+			$apartment_out .= "<select class=\"selectpicker floorSelector2\">";			
+			$i=1;
+			foreach($apartment_all_fetch as $v):
+			$act = ($i==$match[0]) ? 'selected="selected"' : '';
 			$apartment_out .= sprintf(
-				"<div class=\"FloorNumber\">%d</div>",
-				$floor
+				"<option value=\"%s\" %s>%s</option>",
+				$v['idx'],
+				$act,
+				$i
 			);
+			$i++;
+			endforeach;
+			$apartment_out .= "<select>";
+			$apartment_out .= "</div>";
+			$apartment_out .= "</div>";
+			
+
 			$apartment_out .= sprintf(
 				"<div class=\"ApartNumber\">%s</div>",
 				$fetch["title"]
 			);
+
+
+
 			$apartment_out .= "</div>";
 			$apartment_out .= "<div class=\"Info\">";
 			$apartment_out .= sprintf(

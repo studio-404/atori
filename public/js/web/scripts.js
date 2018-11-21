@@ -385,7 +385,6 @@ $(document).on("click", ".sendEmail", function(){
 });
 
 function floorChange(floorid){
-	//$("#PlanModal").modal("hide");
 	$("#PlanModal").modal('hide');
 	setTimeout(function() {
        $(".g-floor[data-floorid='"+floorid+"']").click();
@@ -517,6 +516,15 @@ function loadApartment(idx, floor){
 
 			$("#ApartamentModal").modal("show");
 
+
+			$(".floorSelector2").selectpicker(); 
+
+			// $(".floorSelector2").on("changed.bs.select", function(e, clickedIndex, newValue, oldValue) {
+			//     console.log(this.value, clickedIndex, newValue, oldValue);
+			//     var selectedText = $(this).find("option:selected").text();
+			//     $("#floorNum__").text(selectedText);
+			//     floorChange(this.value);
+			// });
 			
 
 		}else{
