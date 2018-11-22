@@ -385,17 +385,28 @@ $(document).on("click", ".sendEmail", function(){
 });
 
 function floorChange(floorid){
-	$("#PlanModal").modal('hide');
+	$("body").addClass("BodyLoader");
+	
 	setTimeout(function() {
-       $(".g-floor[data-floorid='"+floorid+"']").click();
-   	}, 100);
+		$("#PlanModal").modal('hide');
+		$(".g-floor[data-floorid='"+floorid+"']").click();
+
+		setTimeout(function(){
+			$("body").removeClass("BodyLoader");
+		},500);
+   	}, 500);
 }
 
 function floorChange2(idx){
-	$("#ApartamentModal").modal('hide');
+	$("body").addClass("BodyLoader");
+	
 	setTimeout(function() {
+		$("#ApartamentModal").modal('hide');
        $(".flooorGegma_"+idx).click();
-   	}, 100);
+       setTimeout(function(){
+       		$("body").removeClass("BodyLoader");
+       },500);
+   	}, 500);
 }
 
 

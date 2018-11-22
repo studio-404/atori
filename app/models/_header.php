@@ -40,7 +40,7 @@ class _header
 
 		$out .= sprintf("<title>%s - Atori</title>\n", strip_tags($title));
 		// $out .= "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
-		$out .= "<meta name=\"viewport\" content=\"width=360, user-scalable=no\" />\n";
+		$out .= "<meta name=\"viewport\" content=\"width=400, user-scalable=no\" />\n";
 
 		$actual_link = "http://".$_SERVER["HTTP_HOST"].htmlentities($_SERVER["REQUEST_URI"]);
 		
@@ -63,12 +63,14 @@ class _header
 			$image = $this->public."img/share2.jpg";
 		}
 		$out .= sprintf(
-			"<meta property=\"og:image\" content=\"%s\" />\n", 
-			$image
+			"<meta property=\"og:image\" content=\"%s?v=%s\" />\n", 
+			$image,
+			Config::WEBSITE_VERSION
 		);
 		$out .= sprintf(
-			"<link rel=\"image_src\" type=\"image/jpeg\" href=\"%s\" />\n", 
-			$image
+			"<link rel=\"image_src\" type=\"image/jpeg\" href=\"%s?v=%s\" />\n", 
+			$image,
+			Config::WEBSITE_VERSION
 		);
 
 

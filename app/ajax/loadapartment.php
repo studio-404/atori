@@ -62,20 +62,46 @@ class loadapartment
 
 
 			$apartment_out = "<div class=\"col-sm-6 zoomIn animated\">";
-			$apartment_out .= "<div class=\"ApartInfoBox ApartInfoBox222 ApartInfoBox333\">";
+			$apartment_out .= "<div class=\"ApartInfoBox\">";
 			$apartment_out .= "<div class=\"NumbersDiv\">";
 			
-			// $apartment_out .= sprintf(
-			// 	"<div class=\"FloorNumber\">%d</div>",
-			// 	$floor
-			// );
+			$apartment_out .= sprintf(
+				"<div class=\"FloorNumber\">%d</div>",
+				$floor
+			);
 			preg_match("/\d+/", $fetch["title"], $match);
-			$apartment_out .= "<div class=\"FloorNumber\">";
-			$apartment_out .= "<span id=\"floorNum__2\">".$match[0]."</span>";
+			// $apartment_out .= "<div class=\"FloorNumber\">";
+			// $apartment_out .= "<span id=\"floorNum__2\">".$match[0]."</span>";
 			
-			$apartment_out .= "<div class=\"FloorChangeSelect\">";				
-			$apartment_out .= "<select class=\"selectpicker floorSelector2\">";			
+			// $apartment_out .= "<div class=\"FloorChangeSelect\">";				
+			// $apartment_out .= "<select class=\"selectpicker floorSelector2\">";			
 			
+			// foreach($apartment_all_fetch as $v):
+			// preg_match("/\d+/", $v["title"], $match2);
+			// $act = ($match2[0]==$match[0]) ? 'selected="selected"' : '';
+			// $apartment_out .= sprintf(
+			// 	"<option value=\"%s\" %s>%s</option>",
+			// 	$v['idx'],
+			// 	$act,
+			// 	$match2[0]
+			// );
+			// endforeach;
+			// $apartment_out .= "<select>";
+			// $apartment_out .= "</div>";
+
+			// $apartment_out .= "</div>";
+			
+
+			// $apartment_out .= sprintf(
+			// 	"<div class=\"ApartNumber\">%s</div>",
+			// 	$fetch["title"]
+			// );
+
+			$apartment_out .= "<div class=\"ApartNumber\">";
+			$apartment_out .= "<span id=\"ApartNumber___\">".$fetch["title"]."</span>";
+			
+			$apartment_out .= "<div class=\"ApartChangeSelect\">";
+			$apartment_out .= "<select class=\"selectpicker floorSelector2\">";
 			foreach($apartment_all_fetch as $v):
 			preg_match("/\d+/", $v["title"], $match2);
 			$act = ($match2[0]==$match[0]) ? 'selected="selected"' : '';
@@ -83,22 +109,18 @@ class loadapartment
 				"<option value=\"%s\" %s>%s</option>",
 				$v['idx'],
 				$act,
-				$match2[0]
+				$v["title"]
 			);
 			endforeach;
 			$apartment_out .= "<select>";
 			$apartment_out .= "</div>";
-			$apartment_out .= "</div>";
-			
 
-			$apartment_out .= sprintf(
-				"<div class=\"ApartNumber\">%s</div>",
-				$fetch["title"]
-			);
+			$apartment_out .= "</div>";
 
 
 
 			$apartment_out .= "</div>";
+
 			$apartment_out .= "<div class=\"Info\">";
 			$apartment_out .= sprintf(
 				"<div class=\"Size\">%s %s</div>",
