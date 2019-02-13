@@ -119,7 +119,7 @@ class page
 					`photos`.`lang`=`navigation`.`lang` AND 
 					`photos`.`status`!=:one 
 					ORDER BY `photos`.`id` ASC LIMIT 1
-			) AS photo FROM `navigation` WHERE `cid`=:cid AND `lang`=:lang AND `status`!=:one ORDER BY `position` ASC";
+			) AS photo FROM `navigation` WHERE `cid`=:cid AND `lang`=:lang AND `visibility`!=:one AND `status`!=:one ORDER BY `position` ASC";
 			$prepare = $this->conn->prepare($select);
 			$prepare->execute(array(
 				":cid"=>$cid, 

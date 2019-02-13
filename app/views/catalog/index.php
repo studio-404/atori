@@ -11,14 +11,37 @@ $pagination = new functions\pagination();
 echo $data['headerModule']; 
 
  $imageMap = "";
+ $left = "14%";
 
 if(functions\detectMobile::index()){
 	// $path = Config::WEBSITE."/ge/"
-	if($data["pageData"]["idx"]==141){ $imageMap = "/public/filemanager/projects/abashidze55/imap.png"; }
-	if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; }
+	
+	if($data["pageData"]["idx"]==199){ 
+		// $left = "5%";
+		$imageMap = "/public/filemanager/projects/politovskaia/imap.png"; 
+		$background = "http://atori.ge/public/filemanager/projects/politovskaia/politovskaia.jpg";
+	}
+	if($data["pageData"]["idx"]==200){ 
+		$imageMap = "/public/filemanager/projects/abashidze55/imap.png"; 
+		$background = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=http://atori.ge/public/filemanager/projects/abashidze55/abashidze_background.jpg&w=1400&h=600";
+	}
+	if($data["pageData"]["idx"]==178){ 
+		$imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; 
+		$background = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=http://atori.ge/public/filemanager/projects/atori/atoritower_background.jpg&w=1400&h=600";
+	}
 }else{
-	if($data["pageData"]["idx"]==141){ $imageMap = "/public/filemanager/projects/abashidze55/imap.png"; }
-	if($data["pageData"]["idx"]==178){ $imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; }
+	if($data["pageData"]["idx"]==199){ 
+		$left = "5%"; $imageMap = "/public/filemanager/projects/politovskaia/imap.png"; 
+		$background = "http://atori.ge/public/filemanager/projects/politovskaia/politovskaia.jpg";
+	}
+	if($data["pageData"]["idx"]==200){ 
+		$imageMap = "/public/filemanager/projects/abashidze55/imap.png";
+		$background = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=http://atori.ge/public/filemanager/projects/abashidze55/abashidze_background.jpg&w=1400&h=600"; 
+	}
+	if($data["pageData"]["idx"]==178){ 
+		$imageMap = "/public/filemanager/projects/atori/korpusi_2.png"; 
+		$background = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=http://atori.ge/public/filemanager/projects/atori/atoritower_background.jpg&w=1400&h=600";
+	}
 }
 
 ?> 
@@ -27,7 +50,7 @@ if(functions\detectMobile::index()){
 		<div class="SectionHeight">
 			<div class="container-fluid AtoriContainer_2">
 				<div class="ApartamentDiv">
-					<img src="<?=(isset($data["photos"][1]["path"])) ? Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$data["photos"][1]["path"]."&w=1400&h=600" : ''?>"/>
+					<img src="<?=(isset($background)) ? $background : ''?>"/>
 				</div>
 				<div class="ApartamentInfo">
 					<div class="container-fluid">
@@ -36,7 +59,7 @@ if(functions\detectMobile::index()){
 								<div class="MobileSelectFloor">
 									<select id="SelectOpenModal">
 										<?php
-										if($data["pageData"]["idx"]!=178){// if not atori 
+										if($data["pageData"]["idx"]!=178 && $data["pageData"]["idx"]!=200 && $data["pageData"]["idx"]!=199){// if not atori || not abashidze || not politovskaia
 										?>
 										<option value=""><?=$l->translate("choosefloor")?></option> 
 										<?php
@@ -57,7 +80,7 @@ if(functions\detectMobile::index()){
 											<div class="FloorNumber"></div>
 											<div class="ApartNumber">
 												<?php
-												if($data["pageData"]["idx"]!=178){
+												if($data["pageData"]["idx"]!=178 && $data["pageData"]["idx"]!=200){
 													echo $l->translate("choosefloor");
 												}else{
 													echo ($_SESSION["LANG"]=="en") ? "Comming soon" : "მალე";
@@ -116,12 +139,12 @@ if(functions\detectMobile::index()){
 								</div>
 							</div>
 							<div class="col-sm-8 FullHeight">			
-								<div class="MapAreaDiv animated fadeInUp">
+								<div class="MapAreaDiv animated fadeInUp" style="left:<?=$left?>">
 									<img src="<?=$imageMap?>" class="map" usemap="#features"/>
 									<map name="features">
 										<?php 
 										foreach($data["floors"] as $floor): 
-											if($data["pageData"]["idx"]==178){//atori
+											if($data["pageData"]["idx"]==178 || $data["pageData"]["idx"]==200 || $data["pageData"]["idx"]==199){//atori || abashidze under || politovskaia
 												$size = ($_SESSION["LANG"]=="en") ? "Comming soon" : "მალე";
 												$class = "UnderConstruction";
 											}else{//abashidze

@@ -149,7 +149,53 @@
 				"aditional6":"NULL"
 			}
 		},
+		"200":{
+			"chooseNavType":"false",
+			"choosePageType":"false",
+			"cssClass":"false",
+			"attachModule":"false",
+			"title":"true",
+			"slug":"false",
+			"redirect":"false",
+			"pageDescription":"false",
+			"pageText":"false",	
+			"terms":"false",	
+			"map_coordinates":"false",	
+			"photoUploaderBox":"true",
+			"file_attach_type":"false",
+			"aditionaljson":{
+				"aditional1":"კორდინატები",
+				"aditional2":"NULL",
+				"aditional3":"NULL",
+				"aditional4":"NULL",
+				"aditional5":"NULL",
+				"aditional6":"NULL"
+			}
+		},
 		"178":{
+			"chooseNavType":"false",
+			"choosePageType":"false",
+			"cssClass":"false",
+			"attachModule":"false",
+			"title":"true",
+			"slug":"false",
+			"redirect":"false",
+			"pageDescription":"false",
+			"pageText":"false",	
+			"terms":"false",	
+			"map_coordinates":"false",	
+			"photoUploaderBox":"true",
+			"file_attach_type":"false",
+			"aditionaljson":{
+				"aditional1":"კორდინატები",
+				"aditional2":"NULL",
+				"aditional3":"NULL",
+				"aditional4":"NULL",
+				"aditional5":"NULL",
+				"aditional6":"NULL"
+			}
+		},
+		"199":{
 			"chooseNavType":"false",
 			"choosePageType":"false",
 			"cssClass":"false",
@@ -293,7 +339,53 @@
 				"aditional6":"NULL"
 			}
 		},
+		"200":{
+			"chooseNavType":"false",
+			"choosePageType":"false",
+			"cssClass":"false",
+			"attachModule":"false",
+			"title":"true",
+			"slug":"false",
+			"redirect":"false",
+			"pageDescription":"false",
+			"pageText":"true",	
+			"terms":"true",	
+			"map_coordinates":"true",	
+			"photoUploaderBox":"true",
+			"file_attach_type":"false",
+			"aditionaljson":{
+				"aditional1":"მისამართი",
+				"aditional2":"პროექტის ჩაბარების თარიღი",
+				"aditional3":"სართული",
+				"aditional4":"რეკრიაციული ზონა",
+				"aditional5":"პარკინგი",
+				"aditional6":"NULL"
+			}
+		},
 		"178":{
+			"chooseNavType":"false",
+			"choosePageType":"false",
+			"cssClass":"false",
+			"attachModule":"false",
+			"title":"true",
+			"slug":"false",
+			"redirect":"false",
+			"pageDescription":"false",
+			"pageText":"true",	
+			"terms":"true",	
+			"map_coordinates":"true",	
+			"photoUploaderBox":"true",
+			"file_attach_type":"false",
+			"aditionaljson":{
+				"aditional1":"მისამართი",
+				"aditional2":"პროექტის ჩაბარების თარიღი",
+				"aditional3":"სართული",
+				"aditional4":"რეკრიაციული ზონა",
+				"aditional5":"პარკინგი",
+				"aditional6":"NULL"
+			}
+		},
+		"199":{
 			"chooseNavType":"false",
 			"choosePageType":"false",
 			"cssClass":"false",

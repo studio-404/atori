@@ -296,13 +296,15 @@ class _header
 			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="on-going" && $value["slug"]=="projects") ? "active" : $active;
 
 			
-			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="abashidze-34" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="abashidze55-under" && $value["slug"]=="projects") ? "active" : $active;
 
 			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="completed-projects" && $value["slug"]=="projects") ? "active" : $active;
 
 			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="view" && $value["slug"]=="projects") ? "active" : $active;
 
 			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="atori-tower" && $value["slug"]=="projects") ? "active" : $active;
+
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="politovskaia40" && $value["slug"]=="projects") ? "active" : $active;
 
 
 			if(isset($value['redirect']) && $value['redirect']!=""){
