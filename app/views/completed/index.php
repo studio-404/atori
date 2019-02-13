@@ -25,7 +25,7 @@ echo $data['headerModule'];
 							<?php foreach($data["completed"] as $completed): ?>
 							<a href="/<?=$_SESSION["LANG"]?>/view/?id=<?=$completed["idx"]?>" class="animsition-link col-sm-3" data-wow-duration="0.5s" data-wow-delay="0.1s">
 								<div class="Item">
-									<div class="Image"><img src="<?=Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$completed["photo"]."&w=300&h=335"?>" /></div>
+									<div class="Image"><img src="<?=Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.$completed["photo"]."&w=600&h=670"?>" /></div>
 									<div class="Title"><?=$completed["title"]?></div>
 								</div>
 							</a>

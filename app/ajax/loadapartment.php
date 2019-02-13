@@ -151,7 +151,7 @@ class loadapartment
 			$apartment_out .= "<div class=\"DownloadFile\">";
 			$apartment_out .= sprintf(
 				"<button onclick=\"openwin('%s')\">%s</button>", 
-				Config::PUBLIC_FOLDER.$fetchFile[0]["file_path"],
+				Config::PUBLIC_FOLDER.@$fetchFile[0]["file_path"],
 				$l->translate("downloadpdffloorplan", $lang)
 			);
 			$apartment_out .= "</div>";

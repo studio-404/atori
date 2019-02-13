@@ -24,7 +24,7 @@ class _header
 
 		if(isset($this->product)){
 			$title = strip_tags($this->product['title']);
-			$description = strip_tags($this->product['short_description']);
+			$description = strip_tags(@$this->product['short_description']);
 		}
 
 		$out = "<!DOCTYPE html>\n";
@@ -293,16 +293,16 @@ class _header
 		$out .= "<div class=\"HeaderMenu pull-right\"> \n";
 		foreach ($db_navigation->getter() as $value):
 			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]==$value['slug']) ? "active" : "";
-			$active = ($_SESSION["URL"][1]=="on-going" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="on-going" && $value["slug"]=="projects") ? "active" : $active;
 
 			
-			$active = ($_SESSION["URL"][1]=="abashidze-34" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="abashidze-34" && $value["slug"]=="projects") ? "active" : $active;
 
-			$active = ($_SESSION["URL"][1]=="completed-projects" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="completed-projects" && $value["slug"]=="projects") ? "active" : $active;
 
-			$active = ($_SESSION["URL"][1]=="view" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="view" && $value["slug"]=="projects") ? "active" : $active;
 
-			$active = ($_SESSION["URL"][1]=="atori-tower" && $value["slug"]=="projects") ? "active" : $active;
+			$active = (isset($_SESSION["URL"][1]) && $_SESSION["URL"][1]=="atori-tower" && $value["slug"]=="projects") ? "active" : $active;
 
 
 			if(isset($value['redirect']) && $value['redirect']!=""){

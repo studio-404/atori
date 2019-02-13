@@ -50,11 +50,25 @@ class Completedprojects extends Controller
 			"lang"=>$_SESSION["LANG"]
 		));
 
+		$db_contactdetails = new Database("modules", array(
+			"method"=>"selectModuleByType", 
+			"type"=>"contactdata"
+		)); /* # */
+
+		$db_socialnetworks = new Database("modules", array(
+			"method"=>"selectModuleByType", 
+			"type"=>"socialnetworks",
+			"order"=>"`date`",
+			"by"=>"DESC"
+		));
+
 		
 
 		/* header top */
 		$headertop = $this->model('_top');
 		$headertop->data["navigationModule"] = $navigation->index();
+		$headertop->data["contactdetails"] = $db_contactdetails->getter();
+		$headertop->data["socialnetworks"] = $db_socialnetworks->getter();
 
 		/*footer */
 		$footer = $this->model('_footer');

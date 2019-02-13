@@ -24,6 +24,8 @@ class managerNavigation
 		
 		foreach ($this->navigation as $key => $value) {
 			$ex = explode("/", $key);
+			$ex[2] = (isset($x[2])) ? $x[2] : "";
+			$ex[3] = (isset($x[3])) ? $x[3] : "";
 			$kk = $ex[2]."/".$ex[3];
 			
 			$active = ($kk==$slug) ? "class='active'" : "";

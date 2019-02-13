@@ -38,7 +38,7 @@ class addModuleForm
 
 		// $form = print_r($fetch, true);
 
-		$form .= functions\makeForm::open(array(
+		$form = functions\makeForm::open(array(
 			"action"=>"?",
 			"method"=>"post",
 			"id"=>"",

@@ -10,6 +10,12 @@
 	
 	<link href="<?=$data["header"]["public"]?>/css/web/font-awesome.css" type="text/css" rel="stylesheet" />
 
+	<?php 
+	if(isset($_SESSION["LANG"]) && $_SESSION["LANG"]=="ge"){
+		echo '<link href="'.$data["header"]["public"].'css/manager-ge.css" type="text/css" rel="stylesheet" />';		
+	}
+	?>
+
 	<script src="<?=$data["header"]["public"]?>js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=$data["header"]["public"]?>js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script> 
 	<!--<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>-->

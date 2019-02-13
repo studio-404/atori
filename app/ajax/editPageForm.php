@@ -159,10 +159,11 @@ class editPageForm
 					"placeholder"=>"კლასი", 
 					"id"=>"cssClass", 
 					"name"=>"cssClass",
-					"value"=>$output['cssclass']
+					"value"=>htmlentities($output['cssclass'])
 				));
 			}else{
-				$form .= "<input type=\"hidden\" name=\"cssClass\" id=\"cssClass\" value=\"{$output['cssClass']}\" />";
+				$output['cssClass'] = (isset($output['cssClass'])) ? $output['cssClass'] : "";
+				$form .= "<input type=\"hidden\" name=\"cssClass\" id=\"cssClass\" value=\"".htmlentities($output['cssClass'])."\" />";
 			}
 
 			$parentModuleOptions = new Database('modules', array(
@@ -218,10 +219,10 @@ class editPageForm
 					"id"=>"pageDescription",
 					"name"=>"pageDescription",
 					"placeholder"=>"მოკლე აღწერა", 
-					"value"=>$output['description']
+					"value"=>htmlentities($output['description'])
 				));
 			}else{
-				$form .= "<input type=\"hidden\" name=\"pageDescription\" id=\"pageDescription\" value=\"{$output['description']}\" />";
+				$form .= "<input type=\"hidden\" name=\"pageDescription\" id=\"pageDescription\" value=\"".htmlentities($output['description'])."\" />";
 			}
 
 			if(!isset($restrict["pageText"]) || $restrict["pageText"]!="false"){

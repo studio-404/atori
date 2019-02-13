@@ -1,5 +1,7 @@
 # AddHandler application/x-httpd-php56 .php
 
+Options -Indexes
+
 RewriteEngine On
 
 RewriteBase /

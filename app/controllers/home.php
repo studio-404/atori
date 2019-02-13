@@ -22,6 +22,18 @@ class Home extends Controller
 			"num"=>15
 		));
 
+		$db_contactdetails = new Database("modules", array(
+			"method"=>"selectModuleByType", 
+			"type"=>"contactdata"
+		));
+
+		$db_socialnetworks = new Database("modules", array(
+			"method"=>"selectModuleByType", 
+			"type"=>"socialnetworks",
+			"order"=>"`date`",
+			"by"=>"DESC"
+		));
+
 		$db_navigation = new Database("page", array(
 			"method"=>"select", 
 			"cid"=>0, 
@@ -50,6 +62,9 @@ class Home extends Controller
 		$navigation = $this->model('_navigation');
 		$navigation->data = $db_navigation->getter();
 
+		/* LANGUAGES */
+		$languages = $this->model('_lang'); 
+		$languages->langs = $db_langs->getter();
 
 		/* slidr */
 		$slider = $this->model('_slider');
@@ -57,7 +72,10 @@ class Home extends Controller
 
 		/* header top */
 		$headertop = $this->model('_top');
+		$headertop->data["languagesModule"] = $languages->index();
 		$headertop->data["navigationModule"] = $navigation->index();
+		$headertop->data["contactdetails"] = $db_contactdetails->getter();
+		$headertop->data["socialnetworks"] = $db_socialnetworks->getter();
 
 		/*footer */
 		$footer = $this->model('_footer');
