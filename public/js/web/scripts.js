@@ -58,6 +58,26 @@ if (document.documentElement.clientWidth > 992) {
 	});
 }
 
+
+if (document.documentElement.clientWidth > 992) {
+	$(function() {
+		$("#OnGoingDiv").niceScroll({ 
+			scrollspeed: 300,
+			preservenativescrolling: false,
+			cursorwidth: '8px',
+			cursorborder: 'none',
+			cursorborderradius:'0px',
+			cursorcolor:"#3365ab",
+			autohidemode: false, 
+			background:"#999999",
+			horizrailenabled:false, 
+			boxzoom:true,
+			horizrailenabled:false
+		});
+	});
+}
+
+
 $(document).ready(function() {
   $(".animsition").animsition({
     inClass: 'zoom-in-sm',

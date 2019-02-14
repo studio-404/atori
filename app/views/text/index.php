@@ -18,7 +18,9 @@ $photo = (isset($data["pageData"]["photo"])) ? Config::WEBSITE_.$data["pageData"
                     <div class="AboutInfo animated fadeInUp">
                         <div class="Title"><?=$data['pageData']['title']?></div>
                         <div class="Text">
+                            <div class="innText" style="width:90%; display: block; word-wrap: break-word;">
                             <?=strip_tags($data['pageData']['text'], "<h3><a><p><br><ul><ol><li>")?>
+                            </div>
                         </div> 
                         
                         <!-- <div class="AvardsInfo">

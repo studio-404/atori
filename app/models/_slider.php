@@ -33,8 +33,8 @@ class _slider
 						$w = 750;
 						$h = 525;
 					}else{
-						$w = 1500;
-						$h = 1050;
+						$w = 1900;
+						$h = 950;
 					}
 
 					$image = Config::WEBSITE.$_SESSION["LANG"]."/image/loadimage?f=".Config::WEBSITE_.strip_output::index($pic[0]['path'])."&w=".$w."&h=".$h;

@@ -16,7 +16,7 @@
 	font-weight:bold;
 }
 .slide .SlideContentHeadings p {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size: 25px;
 }
 .LearnMore {
@@ -32,17 +32,17 @@
 	font-size:15px;
 }
 .ApartInfoBox .Info .Size {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 }
 .ApartInfoBox .Info ul li {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 }
 .ApartInfoBox .Info .Total .Name {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size:16px;
 }
 .ApartInfoBox .Info .Total .PerSqm {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size:16px;
 }
 .ApartInfoBox .DownloadFile button {
@@ -74,7 +74,7 @@
 	font-size:25px;
 }
 .ApartamentInfo .InfoBox .Content .Text {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size: 15px;
     line-height: 23px;
 }
@@ -82,7 +82,7 @@
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
 }
 .ApartamentInfo .InfoBox .Content .Features .Item .Name {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size: 15px;
 }
 
@@ -93,7 +93,7 @@
 	font-size: 15px;
 }
 .TermsDivContent {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 }
 
 
@@ -103,7 +103,7 @@
 	font-family:HelveticaNeueLTGEOW8245LtRegular;
 }
 .AboutPage .AboutInfo .Text {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 	font-size: 15px;
     line-height: 23px; 
 }
@@ -121,7 +121,7 @@
 .AtoriInput input[type="text"] ~ label, 
 .AtoriInput input[type="email"] ~ label, 
 .AtoriInput textarea ~ label {
-	font-family:NotoSansGeorgian;
+	font-family:'NotoSansGeorgian',sans-serif;
 }
 .Button1 {
 	font-family:HelveticaNeueLTGEOW8245LtRegular;

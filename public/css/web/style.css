@@ -891,10 +891,11 @@ body {
 	margin-top:20px;
 }
 .OnGoingDiv .row {
-	height:calc(100% - 94px);
+	height:calc(100% - 95px);
 }
 .OnGoingDiv .col-sm-6 {
-	height:100%;
+	height:80%;
+	margin-bottom:30px;
 }
 .OnGoingDiv .Item {
 	width:100%;
@@ -1367,7 +1368,8 @@ a.Button2:hover {
 .ApartamentDiv img {
     height: 100%;
     width: 100%;
-	object-fit:cover
+	object-fit:cover;
+	object-position:bottom;
 }
 .ApartamentDiv:after {
 	content:'';
